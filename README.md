@@ -40,10 +40,10 @@ https://docs.google.com/spreadsheets/d/118J190Qh5Q-qCXzw6W9JbW4vZpZcpKAKl-qowOBN
 https://docs.google.com/spreadsheets/d/1FJKV3g3eSx1nDSocVMCWCkcTm-9k-GkP74XH3zF3usM/edit?usp=sharing
 
 ## ER図
-https://cacoo.com/diagrams/mM21oPy583yXzIk4-570A5.png
+https://cacoo.com/diagrams/mM21oPy583yXzIk4/570A5
 
 ## 画面遷移図
-https://docs.google.com/spreadsheets/d/e/2PACX-1vTLVdnF81Q_O93ebHGBfckJJhjXO4EKeHcYtX1mRxl3bk0ILjeOdI_pwmlmUeOI_aUBezdSoi_YJe71/pubhtml
+https://cacoo.com/diagrams/mM21oPy583yXzIk4/1CB99
 
 ## 画面ワイヤーフレーム
 https://docs.google.com/spreadsheets/d/1pdfA8UnEjmWmmubFymKbuBLjJSRKi0K7W_4tUcVasX4/edit?usp=sharing
