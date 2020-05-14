@@ -1,0 +1,14 @@
+<h1>心霊スポット一覧</h1>
+<table>
+  <tr>
+    <th>地名</th>
+    <th>住所</th>
+  </tr>
+<% @maps.each do |map| %>
+  <tr>
+    <td><%= map.name %></td>
+    <td><%= map.address %></td>
+    <td><%= link_to '詳細', map_path(map.id) %></td>
+  </tr>
+<% end %>
+</table>

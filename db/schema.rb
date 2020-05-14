@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_14_113907) do
+ActiveRecord::Schema.define(version: 2020_05_14_121041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 2020_05_14_113907) do
     t.text "icon"
     t.string "content"
     t.integer "number_of_incident"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "maps", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "content"
+    t.string "horror_level"
+    t.text "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,13 @@
+<%= form_with(model: @map, local: true) do |form| %>
+  <div class="map_name">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="map_address">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to '心霊スポット一覧画面に戻る',maps_path %>

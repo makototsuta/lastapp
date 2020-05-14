@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
+  root 'maps#index'
+
+  resources :maps
   resources :experiences
   resources :movies
   resources :events
 
   devise_for :users
-  root 'users#index'
   resources :users
 
   if Rails.env.development?
