@@ -1,0 +1,14 @@
+<h1>心霊体験一覧</h1>
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th>
+  </tr>
+<% @experiences.each do |experience| %>
+  <tr>
+    <td><%= experience.title %></td>
+    <td><%= experience.content %></td>
+    <td><%= link_to '詳細', experience_path(experience.id) %></td>
+  </tr>
+<% end %>
+</table>
