@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :movies
   resources :events
-  
+
   devise_for :users
   root 'users#index'
   resources :users

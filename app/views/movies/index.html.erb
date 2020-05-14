@@ -1,0 +1,16 @@
+<h1>動画一覧</h1>
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th>
+  </tr>
+<% @movies.each do |movie| %>
+  <tr>
+    <td><%= movie.title %></td>
+    <td><%= movie.content %></td>
+    <td><%= link_to '詳細', movie_path(movie.id) %></td>
+    <td><%= link_to "編集", edit_movie_path(movie.id) %></td>
+    <td><%= link_to '削除', movie_path(movie.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+  </tr>
+<% end %>
+</table>
