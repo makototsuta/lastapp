@@ -14,9 +14,27 @@
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
+  <div class="event_day_time_at">
+    <%= form.label :day_time_at %>
+    <%= form.date_select :day_time_at%>
+  </div>
+  <div class="event_participant_number">
+    <%= form.label :participant_number %>
+    <%= form.text_field :participant_number %>
+  </div>
+  <div class="event_address">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
   <div class="event_content">
     <%= form.label :content %>
     <%= form.text_field :content %>
+  </div>
+  <div class="event_icon_new">
+    <%= form.label :icon %>
+    <%= image_tag(@event.icon.url) if @event.icon && @event.icon.url %>
+    <%= form.file_field :icon %>
+    <%= form.hidden_field :icon_cache %>
   </div>
   <%= form.submit %>
 <% end %>
