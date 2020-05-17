@@ -1,7 +1,5 @@
-<h1>心霊スポット一覧</h1>
-
 <div class="container">
-  <h2>gmap</h2>
+  <h3>周辺心霊マップ</h3>
   <div id="gmap" style="height:400px"></div> <!-- 地図を表示する領域 -->
 </div>
 
@@ -95,16 +93,24 @@ function initMap() {
 
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnqmYC6AIMWBOAv8WcT51MO9pHnfTcj4M&callback=initMap" async defer></script><!-- YOUR_API_KEYの部分は取得した APIキーで置き換えます -->
-<table>
-  <tr>
-    <th>地名</th>
-    <th>住所</th>
-  </tr>
-<% @maps.each do |map| %>
-  <tr>
-    <td><%= map.name %></td>
-    <td><%= map.address %></td>
-    <td><%= link_to '詳細', map_path(map.id) %></td>
-  </tr>
-<% end %>
-</table>
+
+<div class="container">
+  <h4>心霊スポット一覧</h4>
+  <table>
+    <tr>
+      <th>地名</th>
+      <th>住所</th>
+      <th>恐怖度</th>
+    </tr>
+  <% @maps.each do |map| %>
+    <tr>
+      <td><%= map.name %></td>
+      <td><%= map.address %></td>
+      <td><%= map.horror_level %></td>
+      <td><%= link_to '詳細', map_path(map.id) %></td>
+      <td><%= link_to "編集", edit_map_path(map.id) %></td>
+      <td><%= link_to '削除', map_path(map.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>

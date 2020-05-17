@@ -17,9 +17,7 @@
   </div>
   <div class="map_icon_new">
     <%= form.label :icon %>
-    <%= image_tag(@map.icon.url) if @map.icon && @map.icon.url %>
     <%= form.file_field :icon %>
-    <%= form.hidden_field :icon_cache %>
   </div>
   <%= form.submit %>
 <% end %>

@@ -1,3 +1,8 @@
 <h1>心霊スポット詳細画面</h1>
+<div class="map_icon_show">
+  <%= image_tag(@map.icon.url) if @map.icon && @map.icon.url %>
+</div>
 <p>地名: <%= @map.name %></p>
 <p>住所: <%= @map.address %></p>
+<p>恐怖度: <%= @map.horror_level %></p>
+<p>概要: <%= @map.content %></p>

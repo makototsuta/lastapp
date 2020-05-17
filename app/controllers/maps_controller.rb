@@ -1,4 +1,6 @@
 class MapsController < ApplicationController
+  before_action :set_map, only: [:show, :edit, :update, :destroy]
+
   def index
     @maps = Map.all
   end
@@ -17,6 +19,31 @@ class MapsController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    @map.destroy
+    redirect_to maps_path, notice:"マップを削除しました！"
+  end
+
+  def edit
+  end
+
+  def update
+    if @map.update(map_params)
+      redirect_to maps_path, notice: "マップを編集しました！"
+    else
+      render :edit
+    end
+  end
+
+  private
+  def map_params
+    params.require(:map).permit(:name, :address, :horror_level, :content, :icon, :icon_cache)
+  end
+
+  def set_map
     @map = Map.find(params[:id])
   end
+
 end
