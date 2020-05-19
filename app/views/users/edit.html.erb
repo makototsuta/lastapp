@@ -1,2 +1,50 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<%= form_with(model: @user, local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="user_icon">
+    <%= form.label :icon %>
+    <%= image_tag(@user.icon.url) if @user.icon && @user.icon.url %>
+    <%= form.file_field :icon %>
+    <%= form.hidden_field :icon_cache %>
+  </div>
+  <div class="user_name">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="user_email">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div class="user_birthed_at">
+    <%= form.label :birthed_at %>
+    <%= form.text_field :birthed_at %>
+  </div>
+  <div class="user_sex">
+    <%= form.label :sex %>
+    <%= form.text_field :sex %>
+  </div>
+  <div class="user_address">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+  <div class="user_mobile_number">
+    <%= form.label :mobile_number %>
+    <%= form.text_field :mobile_number %>
+  </div>
+  <div class="user_introduction">
+    <%= form.label :introduction %>
+    <%= form.text_field :introduction %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to '一覧画面に戻る',users_path %>

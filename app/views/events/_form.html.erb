@@ -16,7 +16,7 @@
   </div>
   <div class="event_day_time_at">
     <%= form.label :day_time_at %>
-    <%= form.date_select :day_time_at%>
+    <%= form.date_select :day_time_at,{use_month_numbers: true, start_year: (Date.today).year, default: Date.today} %>
   </div>
   <div class="event_participant_number">
     <%= form.label :participant_number %>
@@ -26,9 +26,13 @@
     <%= form.label :address %>
     <%= form.text_field :address %>
   </div>
+  <div class="event_outline">
+    <%= form.label :outline %>
+    <%= form.text_field :outline %>
+  </div>
   <div class="event_content">
     <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.text_area :content %>
   </div>
   <div class="event_icon_new">
     <%= form.label :icon %>

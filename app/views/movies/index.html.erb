@@ -3,11 +3,20 @@
   <tr>
     <th>タイトル</th>
     <th>内容</th>
+    <th>動画</th>
   </tr>
 <% @movies.each do |movie| %>
   <tr>
     <td><%= movie.title %></td>
     <td><%= movie.content %></td>
+    <% if movie.icon? %>
+      <% if movie.icon.file.content_type.include?('image/') %>
+        <td><%= image_tag movie.icon.url %></td>
+      <% else %>
+        <td><%= video_tag movie.icon.url, width: "30%", height: "30%",
+                      controls: true, autobuffer: true %></td>
+      <% end %>
+    <% end %>
     <td><%= link_to '詳細', movie_path(movie.id) %></td>
     <td><%= link_to "編集", edit_movie_path(movie.id) %></td>
     <td><%= link_to '削除', movie_path(movie.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>

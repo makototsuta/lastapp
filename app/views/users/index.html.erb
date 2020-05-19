@@ -2,14 +2,27 @@
 <h1>マイページ</h1>
 <table>
   <tr>
+    <th></th>
     <th>名前</th>
     <th>メールアドレス</th>
+    <th>年齢</th>
+    <th>性別</th>
+    <th>住所</th>
+    <th>携帯番号</th>
+    <th>自己紹介</th>
+    <th></th>
   </tr>
   <% @users.each do |user| %>
     <tr>
       <% if user == current_user %>
+        <td><%= image_tag(user.icon.url) %></td>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
+        <td><%= user.birthed_at %></td>
+        <td><%= user.sex %></td>
+        <td><%= user.address %></td>
+        <td><%= user.mobile_number %></td>
+        <td><%= user.introduction %></td>
         <td><%= link_to "編集", edit_user_path(user.id) %></td>
       <% end %>
     </tr>

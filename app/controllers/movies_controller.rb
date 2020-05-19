@@ -40,7 +40,7 @@ class MoviesController < ApplicationController
 
   private
   def movie_params
-    params.require(:movie).permit(:title, :content)
+    params.require(:movie).permit(:title, :content, :icon, :icon_cache, :user_id)
   end
 
   def set_movie

@@ -1,20 +1,38 @@
-<h1>イベント一覧</h1>
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>内容</th>
-  </tr>
-<% @events.each do |event| %>
-  <tr>
-    <td class="event_icon_index">
-        <%= image_tag(event.icon.url) if event.icon && event.icon.url %>
-    </td>
-    <td><%= event.title %></td>
-    <td><%= event.address %></td>
-    <td><%= event.day_time_at %></td>
-    <td><%= link_to '詳細', event_path(event.id) %></td>
-    <td><%= link_to "編集", edit_event_path(event.id) %></td>
-    <td><%= link_to '削除', event_path(event.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="container">
+  <div class="row">
+    <% @events.each do |event| %>
+      <div class="event_index col-lg-12">
+        <div class="event_index_icon col-xs-12 col-md-4">
+          <%= image_tag(event.icon.url) if event.icon && event.icon.url %>
+        </div>
+        <div class="event_index_table">
+          <table>
+            <tr>
+              <th>タイトル</th><td>:<%= event.title %></td>
+            </tr>
+            <tr>
+              <th>開催地</th><td>:<%= event.address %></td>
+            </tr>
+            <tr>
+              <th>開催日時</th><td>:<%= event.day_time_at %></td>
+            </tr>
+            <tr>
+              <th>催行人数</th><td>:<%= event.participant_number %></td>
+            </tr>
+            <tr>
+              <th>開催概要</th><td>:<%= event.outline %></td>
+            </tr>
+            <tr>
+              <th>主催者</th><td>:<%= event.user.name %></td>
+            </tr>
+            <tr>
+              <th></th><td><%= link_to '詳細', event_path(event.id) %>
+                          <%= link_to "編集", edit_event_path(event.id) %>
+                          <%= link_to '削除', event_path(event.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -22,6 +22,7 @@ ja:
       event:
         title: タイトル
         content: 内容
+        outline: 概要
         address: 開催地
         icon: イベントイメージ
         organizer_id: 主催者

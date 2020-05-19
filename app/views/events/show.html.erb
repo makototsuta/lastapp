@@ -1,3 +1,53 @@
-<h1>イベント詳細画面</h1>
-<p>タイトル: <%= @event.title %></p>
-<p>内容: <%= @event.content %></p>
+<div class="container">
+  <div class="row">
+    <div class="event_index col-lg-12">
+      <div class="event_show_icon col-xs-12 col-md-4">
+        <%= image_tag(@event.icon.url) if @event.icon && @event.icon.url %>
+      </div>
+        <div class="event_index_table">
+          <table>
+            <tr>
+              <th>タイトル</th><td>:<%= @event.title %></td>
+            </tr>
+            <tr>
+              <th>開催地</th><td>:<%= @event.address %></td>
+            </tr>
+            <tr>
+              <th>開催日時</th><td>:<%= @event.day_time_at %></td>
+            </tr>
+            <tr>
+              <th>催行人数</th><td>:<%= @event.participant_number %></td>
+            </tr>
+            <tr>
+              <th>開催概要</th><td>:<%= @event.outline %></td>
+            </tr>
+            <tr>
+              <th>開催内容</th><td>:<%= @event.content %></td>
+            </tr>
+        </table>
+      </div>
+      <div class="event_show_icon col-xs-12 col-md-4">
+        <%= image_tag(@event.user.icon.url) if @event.user.icon && @event.user.icon.url %>
+      </div>
+        <div class="event_index_table">
+          <table>
+            <tr>
+              <th>主催者名</th><td>:<%= @event.user.name %></td>
+            </tr>
+            <tr>
+              <th>性別</th><td>:<%= @event.user.sex %></td>
+            </tr>
+            <tr>
+              <th>メール</th><td>:<%= @event.user.email %></td>
+            </tr>
+            <tr>
+              <th>携帯番号</th><td>:<%= @event.user.mobile_number %></td>
+            </tr>
+            <tr>
+              <th>自己紹介</th><td>:<%= @event.user.introduction %></td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
