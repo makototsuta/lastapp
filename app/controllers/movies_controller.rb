@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
   end
 
   def create
-    @movie = Movie.new(movie_params)
+    @movie = current_user.movies.build(movie_params)
     if @movie.save
       redirect_to movies_path, notice: "動画を投稿しました！"
     else
@@ -20,6 +20,8 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @comments = @movie.comments
+    @comment = @movie.comments.build
   end
 
   def destroy

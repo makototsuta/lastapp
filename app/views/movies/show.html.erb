@@ -1,3 +1,20 @@
 <h1>動画詳細画面</h1>
-<p>タイトル: <%= @moive.title %></p>
-<p>内容: <%= @movie.content %></p>
+<div class="container">
+  <div class="row">
+    <div class="movie-show col-xs-6">
+      <%= video_tag @movie.icon.url, controls: true, autobuffer: true %>
+      <h4><%= @movie.title %></h4>
+      <div><%= @movie.user.name %></div>
+      <div><%= @movie.content %></div>
+    </div>
+    <div class="col-xs-6">
+      <p>コメント一覧</p>
+      <div id="comments_area">
+        <%= render partial: 'comments/index', locals: { comments: @comments, movie: @movie } %>
+      </div>
+      <%= render partial: 'comments/form', locals: { comment: @comment, movie: @movie } %>
+    </div>
+  </div>
+</div>
+
+<%= link_to '動画一覧画面に戻る',movies_path %>

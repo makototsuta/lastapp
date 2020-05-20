@@ -27,3 +27,14 @@ Event.create!(
     {title: '稲川淳二の怪談ナイト', address: '西東京市保谷こもれびホール メインホール', content: 'ミステリーナイト当日、何らかの怪奇現象が引き起こした不慮の事故に関して主催者は一切の責任を負いませんのであらかじめご了承ください...。', outline: '「今年もアイツらがやってくる・・・」', icon:File.open("#{Rails.root}/app/assets/images/img_03.jpg"), participant_number: '30', day_time_at: 'Sun, 21 June 2020', user_id: '5'}
   ]
 )
+
+Movie.create!(
+  [
+    {title: 'クワイエット・プレイス', content: '音を立てたら即死　静寂の世界で生き延びるホラー', icon:File.open("#{Rails.root}/app/assets/images/lario76151100005.mp4"), user_id: '1'},
+    {title: '史上最も不快なホラーがついに公開！', content: '姉は精神を病み家に囚われ、妹は家を出て幸せを手に入れた。 姉妹がその家で再会した時、あの惨劇が再び幕を開ける―', icon:File.open("#{Rails.root}/app/assets/images/史上最も不快なホラーがついに公開_映画_ゴーストランドの惨劇_公式.mp4"), user_id: '2'},
+    {title: '果たして少女は魔女なのか!?', content: '本作は全世界24の映画祭に招待され、ファンの圧倒的な支持を獲得した新感覚のダーク・ファンタジー・ホラー！', icon:File.open("#{Rails.root}/app/assets/images/果たして少女は魔女なのか!.mp4"), user_id: '3'},
+    {title: '『コンジアム』', content: '実在する精神病院の廃墟を舞台としたコリアンホラー', icon:File.open("#{Rails.root}/app/assets/images/実在する精神病院の廃墟を舞台としたコリアンホラー／映画『コンジアム』予告編.mp4"), user_id: '4'},
+    {title: 'パソコンに表示されたSNSが...', content: 'SNSの画面だけで展開する新感覚ホラー。仲良しグループが、ネットいじめで自殺した少女の怨念に襲われる恐怖を描く。', icon:File.open("#{Rails.root}/app/assets/images/パソコンに表示されたSNSの画面で展開するホラー！映画『アンフレンデッド』予告編.mp4"), user_id: '5'},
+    {title: '血も凍る学園ホラー、本当に恐ろしいのは誰!?', content: '小さなモンスターを捕まえて独自の「調査」と「実験」を始めるが、やがてモンスターは彼らの手に負えなくなっていく', icon:File.open("#{Rails.root}/app/assets/images/血も凍る学園ホラー、本当に恐ろしいのは誰!.mp4"), user_id: '1'}
+  ]
+)

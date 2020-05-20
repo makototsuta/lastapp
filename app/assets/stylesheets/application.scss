@@ -39,3 +39,23 @@
    margin-right: 20px;
    margin-top: 15px;
  }
+
+.movie_index video {
+  height: 300px;
+  width: 100%;
+  margin-right: 20px;
+}
+
+.each_movie {
+  float: left;
+  color: gray;
+}
+
+.each_movie a{
+  color: gray;
+}
+
+.movie-show video {
+  width: 600px;
+  height: 500px;
+}

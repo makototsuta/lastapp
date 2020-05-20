@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_18_120212) do
+ActiveRecord::Schema.define(version: 2020_05_20_220022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "movie_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_comments_on_movie_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -91,6 +99,7 @@ ActiveRecord::Schema.define(version: 2020_05_18_120212) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "movies"
   add_foreign_key "events", "users"
   add_foreign_key "movies", "users"
 end

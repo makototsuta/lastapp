@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   resources :maps
   resources :experiences
-  resources :movies
+
+  resources :movies do
+    resources :comments
+  end
+
   resources :events
 
   devise_for :users
