@@ -59,3 +59,51 @@
   width: 600px;
   height: 500px;
 }
+
+.user_index {
+  border: solid 1px #d4d8db;
+  padding: 10px;
+}
+
+.user_index img {
+  height: 200px;
+  width: 200px;
+  float: left;
+  margin-right: 20px;
+}
+
+.user_index table th {
+  width:150px;
+}
+
+.user_index_event {
+  border: solid 1px #d4d8db;
+  padding: 10px;
+}
+
+.user_index_event img {
+  height: 250px;
+  width: 100%;
+  float: left;
+  margin-right: 20px;
+}
+
+.user_index_event table th {
+  width: 100px;
+}
+
+.user_index_movie {
+  border: solid 1px #d4d8db;
+  padding: 10px;
+}
+
+.user_index_movie video {
+  height: 250px;
+  width: 100%;
+  float: left;
+  margin-right: 20px;
+}
+
+.user_index_movie table th {
+  width: 100px;
+}

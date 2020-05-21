@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update]
-  
+
   def index
-    @users = User.all
+    @users= User.all.includes(:events, :movies)
   end
 
   def new
@@ -39,6 +39,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :icon, :address, :sex, :mobile_number, :birthed_at, :introduction, :icon_cache)
+    params.require(:user).permit(:name, :email, :icon, :address, :sex, :mobile_number, :birthed_at, :introduction, :icon_cache, :event_id)
   end
 end
