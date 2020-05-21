@@ -1,4 +1,11 @@
 <h1>動画詳細画面</h1>
+<% unless @movie.user_id == current_user.id %>
+  <% if @favorite_movie.present? %>
+    <%= link_to 'お気に入り解除する', favorite_movie_path(id: @favorite_movie.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'お気に入りする', favorite_movies_path(movie_id: @movie.id), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
 <div class="container">
   <div class="row">
     <div class="movie-show col-xs-6">

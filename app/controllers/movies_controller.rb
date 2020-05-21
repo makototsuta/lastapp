@@ -22,6 +22,7 @@ class MoviesController < ApplicationController
   def show
     @comments = @movie.comments
     @comment = @movie.comments.build
+    @favorite_movie = current_user.favorite_movies.find_by(movie_id: @movie.id)
   end
 
   def destroy

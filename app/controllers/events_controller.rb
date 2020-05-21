@@ -20,6 +20,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @favorite_event = current_user.favorite_events.find_by(event_id: @event.id)
   end
 
   def destroy

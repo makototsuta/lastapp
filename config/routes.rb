@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
 
+  resources :favorite_events, only: [:create, :destroy]
+  resources :favorite_movies, only: [:create, :destroy]
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
