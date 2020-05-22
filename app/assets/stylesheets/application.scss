@@ -16,6 +16,10 @@
  */
  @import "bootstrap";
 
+ .map_index {
+   margin-top: 50px;
+ }
+
  .event_index {
    border-top: solid 1px #d4d8db;
    padding: 15px 0px 15px 0px;
@@ -158,4 +162,38 @@
   float: left;
   margin-right: 20px;
   margin-top: 15px;
+}
+
+.map_event_index {
+  margin-top: 50px;
+}
+
+.map_event_index img {
+  height: 200px;
+  width: 100%;
+  margin-right: 20px;
+}
+
+.map_each_event {
+  float: left;
+  color: gray;
+}
+
+.map_movie_index {
+  margin-top: 50px;
+}
+
+.map_movie_index video {
+  height: 300px;
+  width: 100%;
+  margin-right: 20px;
+}
+
+.map_each_movie {
+  float: left;
+  color: gray;
+}
+
+.map_each_movie p {
+  margin-top: -50px;
 }

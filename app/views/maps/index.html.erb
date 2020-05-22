@@ -95,22 +95,54 @@ function initMap() {
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnqmYC6AIMWBOAv8WcT51MO9pHnfTcj4M&callback=initMap" async defer></script><!-- YOUR_API_KEYの部分は取得した APIキーで置き換えます -->
 
 <div class="container">
-  <h4>心霊スポット一覧</h4>
-  <table>
-    <tr>
-      <th>地名</th>
-      <th>住所</th>
-      <th>恐怖度</th>
-    </tr>
-  <% @maps.each do |map| %>
-    <tr>
-      <td><%= map.name %></td>
-      <td><%= map.address %></td>
-      <td><%= map.horror_level %></td>
-      <td><%= link_to '詳細', map_path(map.id) %></td>
-      <td><%= link_to "編集", edit_map_path(map.id) %></td>
-      <td><%= link_to '削除', map_path(map.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
-    </tr>
-  <% end %>
-  </table>
+  <div class="row">
+    <div class="map_index">
+      <h4>心霊スポット一覧</h4>
+      <table>
+        <tr>
+          <th>地名</th>
+          <th>住所</th>
+          <th>恐怖度</th>
+        </tr>
+      <% @maps.each do |map| %>
+        <tr>
+          <td><%= map.name %></td>
+          <td><%= map.address %></td>
+          <td><%= map.horror_level %></td>
+          <td><%= link_to '詳細', map_path(map.id) %></td>
+          <td><%= link_to "編集", edit_map_path(map.id) %></td>
+          <td><%= link_to '削除', map_path(map.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="map_event_index">
+      <h4>新着イベント</h4>
+      <% @events.each do |event| %>
+      <div class="map_each_event col-xs-12 col-md-6 col-lg-4">
+        <%= link_to image_tag(event.icon.url), event_path(event.id) %>
+        <%= event.title %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="map_movie_index">
+      <h4>新着動画</h4>
+      <% @movies.each do |movie| %>
+      <div class="map_each_movie col-xs-12 col-md-6 col-lg-4">
+        <%= link_to video_tag(movie.icon.url), movie_path(movie.id) %>
+        <p><%= movie.title %></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>

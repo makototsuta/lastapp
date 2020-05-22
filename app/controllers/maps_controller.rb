@@ -3,6 +3,8 @@ class MapsController < ApplicationController
 
   def index
     @maps = Map.all
+    @events = Event.order(created_at: :desc).limit(3)
+    @movies = Movie.order(created_at: :desc).limit(3)
   end
 
   def new
