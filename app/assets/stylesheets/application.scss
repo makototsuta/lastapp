@@ -76,13 +76,18 @@
   width:150px;
 }
 
-.user_index_event {
+.user_event {
   border: solid 1px #d4d8db;
-  padding: 10px;
+  height: auto;
+}
+
+.user_index_event {
+  padding: 30px;
+  height: 50%;
 }
 
 .user_index_event img {
-  height: 250px;
+  height: 200px;
   width: 100%;
   float: left;
   margin-right: 20px;
@@ -92,18 +97,65 @@
   width: 100px;
 }
 
-.user_index_movie {
+.user_movie {
   border: solid 1px #d4d8db;
-  padding: 10px;
+  box-sizing: content-box;
+  height: 100%;
+}
+
+.user_index_movie {
+  padding: 30px;
+  height: 50%;
 }
 
 .user_index_movie video {
+  height: 200px;
+  width: 100%;
+  float: left;
+  margin-right: 20px;
+}
+
+.user_index_movie table {
+  margin-top: 20px;
+}
+
+.user_index_movie table th {
+  width: 100px;
+}
+
+.experience th {
+  width: 300px;
+}
+
+.experience td {
+  width: 500px;
+}
+
+.experience_index {
+  border-top: solid 1px #d4d8db;
+  padding: 15px 0px 15px 0px;
+}
+
+.experience_index_icon img {
   height: 250px;
   width: 100%;
   float: left;
   margin-right: 20px;
 }
 
-.user_index_movie table th {
+.experience_show table th {
   width: 100px;
+  height: 100px;
+}
+
+.experience_show table td {
+  height: 100px;
+}
+
+.experience_show_icon img {
+  height: 250px;
+  width: 100%;
+  float: left;
+  margin-right: 20px;
+  margin-top: 15px;
 }

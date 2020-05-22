@@ -1,3 +1,23 @@
-<h1>心霊体験詳細画面</h1>
-<p>タイトル: <%= @experience.title %></p>
-<p>内容: <%= @experience.content %></p>
+<div class="container">
+  <div class="row">
+    <div class="experience_show col-lg-12">
+      <div class="experience_show_icon col-xs-12 col-md-4">
+        <%= image_tag(@experience.icon.url) if @experience.icon && @experience.icon.url %>
+      </div>
+        <div class="experience_show_table">
+          <table>
+            <tr>
+              <th>タイトル</th><td><%= @experience.title %></td>
+            </tr>
+            <tr>
+              <th>内容</th><td><%= @experience.content %></td>
+            </tr>
+            <tr>
+              <th>実施手順</th><td>
+                <%=safe_join(@experience.procedure.split("\n"),tag(:br))%></td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

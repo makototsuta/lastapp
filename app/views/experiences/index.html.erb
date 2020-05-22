@@ -1,14 +1,69 @@
-<h1>心霊体験一覧</h1>
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>内容</th>
-  </tr>
-<% @experiences.each do |experience| %>
-  <tr>
-    <td><%= experience.title %></td>
-    <td><%= experience.content %></td>
-    <td><%= link_to '詳細', experience_path(experience.id) %></td>
-  </tr>
-<% end %>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="experience">
+      <p>初級編</p>
+      <div class="low col-xs-12 col-xs-12 col-lg-12">
+        <table>
+          <tr>
+            <th>タイトル</th>
+            <th>概要</th>
+            <th>心霊現象発生回数</th>
+            <td></td>
+          </tr>
+        <% @experiences.each do |experience| %>
+          <% if experience.danger_level == "1" %>
+            <tr>
+              <td><%= experience.title %></td>
+              <td><%= experience.outline %></td>
+              <td><%= experience.number_of_incident %></td>
+              <td><%= link_to '詳細', experience_path(experience.id) %><%= link_to "編集", edit_experience_path(experience.id) %><%= link_to '削除', experience_path(experience.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+            </tr>
+          <% end %>
+        <% end %>
+        </table>
+      </div>
+      <p>中級編</p>
+      <div class="middle col-xs-12 col-xs-12 col-lg-12">
+        <table>
+          <tr>
+            <th>タイトル</th>
+            <th>概要</th>
+            <th>心霊現象発生回数</th>
+            <td></td>
+          </tr>
+        <% @experiences.each do |experience| %>
+          <% if experience.danger_level == "2" %>
+            <tr>
+              <td><%= experience.title %></td>
+              <td><%= experience.outline %></td>
+              <td><%= experience.number_of_incident %></td>
+              <td><%= link_to '詳細', experience_path(experience.id) %><%= link_to "編集", edit_experience_path(experience.id) %><%= link_to '削除', experience_path(experience.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+            </tr>
+          <% end %>
+        <% end %>
+        </table>
+      </div>
+      <p>上級編</p>
+      <div class="high col-xs-12 col-xs-12 col-lg-12">
+        <table>
+          <tr>
+            <th>タイトル</th>
+            <th>概要</th>
+            <th>心霊現象発生回数</th>
+            <td></td>
+          </tr>
+        <% @experiences.each do |experience| %>
+          <% if experience.danger_level == "3" %>
+            <tr>
+              <td><%= experience.title %></td>
+              <td><%= experience.outline %></td>
+              <td><%= experience.number_of_incident %></td>
+              <td><%= link_to '詳細', experience_path(experience.id) %><%= link_to "編集", edit_experience_path(experience.id) %><%= link_to '削除', experience_path(experience.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+            </tr>
+          <% end %>
+        <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

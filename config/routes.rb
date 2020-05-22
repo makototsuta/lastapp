@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :favorite_events, only: [:create, :destroy]
+
   resources :favorite_movies, only: [:create, :destroy]
 
   if Rails.env.development?

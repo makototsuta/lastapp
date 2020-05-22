@@ -35,9 +35,9 @@
           </div>
         </div>
 
+        <p>投稿イベント</p>
+        <div class="user_event col-xs-12 col-md-12 col-lg-12">
           <% user.events.each do |event| %>
-          <p>投稿イベント</p>
-          <%= link_to "編集", edit_event_path(event.id) %>
           <div class="user_index_event col-lg-12">
             <div class="col-xs-12 col-md-4">
               <%= image_tag(event.icon.url) if event.icon && event.icon.url %>
@@ -62,14 +62,18 @@
                 <tr>
                   <th>詳細</th><td><%= event.content %></td>
                 </tr>
+                <tr>
+                  <th></th><td><%= link_to "編集", edit_event_path(event.id) %></td>
+                </tr>
               </table>
             </div>
         </div>
         <% end %>
+      </div>
 
+      <p>投稿動画</p>
+      <div class="user_movie col-xs-12 col-md-12 col-lg-12">
         <% user.movies.each do |movie| %>
-        <p>投稿動画</p>
-        <%= link_to "編集", edit_movie_path(movie.id) %>
         <div class="user_index_movie col-lg-12">
           <div class="col-xs-12 col-md-4">
             <%= video_tag movie.icon.url, controls: true, autobuffer: true %>
@@ -82,10 +86,14 @@
               <tr>
                 <th>内容</th><td><%= movie.content %></td>
               </tr>
+              <tr>
+                <th></th><td><%= link_to "編集", edit_movie_path(movie.id) %></td>
+              </tr>
             </table>
           </div>
         </div>
         <% end %>
+      </div>
 
       <% end %>
     <% end %>

@@ -1,0 +1,32 @@
+<%= form_with(model: @experience, local: true) do |form| %>
+
+  <div class="experience_title">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="experience_outline">
+    <%= form.label :outline %>
+    <%= form.text_field :outline %>
+  </div>
+  <div class="experience_content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <div class="experience_procedure">
+    <%= form.label :procedure %>
+    <%= form.text_area :procedure %>
+  </div>
+  <div class="experience_danger_level">
+    <%= form.label :danger_level %>
+    <%= form.text_field :danger_level %>
+  </div>
+  <div class="experience_icon_new">
+    <%= form.label :icon %>
+    <%= image_tag(@experience.icon.url) if @experience.icon && @experience.icon.url %>
+    <%= form.file_field :icon %>
+    <%= form.hidden_field :icon_cache %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to '心霊体験一覧画面に戻る',experiences_path %>
