@@ -34,12 +34,20 @@ p, ol, ul, td, a {
   color: white;
 }
 
+#gmap {
+  margin-bottom: 30px;
+}
+
 .horror_level {
   color: red;
 }
 
  .map_index {
    margin-top: 50px;
+ }
+
+ .event_search {
+   width: 100%;
  }
 
  .new_event {
@@ -234,5 +242,5 @@ p, ol, ul, td, a {
 }
 
 .card-header {
-  height: 0px;
+  height: 30px;
 }

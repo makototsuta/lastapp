@@ -2,7 +2,8 @@ class MapsController < ApplicationController
   before_action :set_map, only: [:edit, :update, :destroy]
 
   def index
-    @maps = Map.all
+    @q = Map.ransack(params[:q])
+    @maps = @q.result(distinct: true)
     @events = Event.order(created_at: :desc).limit(3)
     @movies = Movie.order(created_at: :desc).limit(3)
   end

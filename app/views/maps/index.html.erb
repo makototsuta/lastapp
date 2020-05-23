@@ -95,6 +95,13 @@ function initMap() {
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnqmYC6AIMWBOAv8WcT51MO9pHnfTcj4M&callback=initMap" async defer></script><!-- YOUR_API_KEYの部分は取得した APIキーで置き換えます -->
 
 <div class="container">
+  <%= search_form_for @q do |form| %>
+    <div class="form-group row">
+      <%= form.label :address_cont, "心霊スポット住所検索", class: "col-sm-2 col-form-label" %>
+      <%= form.search_field :address_cont, class: "form-control col-sm-4" %>
+      <%= form.submit "検索" %>
+    </div>
+  <% end %>
   <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
     <div class="card">
       <div class="card-header" role="tab" id="headingOne">
