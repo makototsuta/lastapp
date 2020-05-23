@@ -10,41 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_195356) do
+ActiveRecord::Schema.define(version: 2020_05_23_223825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
     t.bigint "movie_id"
-    t.text "content"
+    t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["movie_id"], name: "index_comments_on_movie_id"
   end
 
   create_table "events", force: :cascade do |t|
-    t.string "title"
-    t.string "content"
-    t.string "address"
-    t.text "icon"
+    t.string "title", null: false
+    t.string "content", null: false
+    t.string "address", null: false
+    t.text "icon", null: false
     t.integer "organizer_id"
-    t.date "day_time_at"
-    t.integer "participant_number"
+    t.date "day_time_at", null: false
+    t.integer "participant_number", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "outline"
+    t.string "outline", null: false
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "experiences", force: :cascade do |t|
-    t.string "title"
-    t.string "outline"
-    t.string "procedure"
+    t.string "title", null: false
+    t.string "outline", null: false
+    t.string "procedure", null: false
     t.string "danger_level"
-    t.text "icon"
-    t.string "content"
+    t.text "icon", null: false
+    t.string "content", null: false
     t.integer "number_of_incident"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -65,19 +65,19 @@ ActiveRecord::Schema.define(version: 2020_05_23_195356) do
   end
 
   create_table "maps", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "content"
-    t.string "horror_level"
-    t.text "icon"
+    t.string "name", null: false
+    t.string "address", null: false
+    t.string "content", null: false
+    t.string "horror_level", null: false
+    t.text "icon", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "movies", force: :cascade do |t|
-    t.string "title"
-    t.string "content"
-    t.text "icon"
+    t.string "title", null: false
+    t.string "content", null: false
+    t.text "icon", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -109,13 +109,13 @@ ActiveRecord::Schema.define(version: 2020_05_23_195356) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.string "name"
-    t.text "icon"
+    t.string "name", null: false
+    t.text "icon", null: false
     t.date "birthed_at"
-    t.string "sex"
-    t.string "address"
-    t.string "mobile_number"
-    t.string "introduction"
+    t.string "sex", null: false
+    t.string "address", null: false
+    t.string "mobile_number", null: false
+    t.string "introduction", null: false
     t.boolean "admin", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true

@@ -1,4 +1,9 @@
 class Movie < ApplicationRecord
+
+  validates :title,  presence: true, length: { maximum: 20 }
+  validates :content,  presence: true, length: { maximum: 255 }
+  validates :icon,  presence: true
+
   belongs_to :user, optional: true
   mount_uploader :icon, VideoUploader
   validates :title, :content, :icon, :presence => true
