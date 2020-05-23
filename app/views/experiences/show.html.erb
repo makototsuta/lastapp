@@ -29,5 +29,9 @@
       </div>
       <%= render partial: 'opinions/form', locals: { opinion: @opinion, experience: @experience } %>
     </div>
+    <div class="like">
+      <p>心霊現象起きた?</p>
+      <%= button_to '起きた!!', experience_watches_path(@experience) %>
+    </div>
   </div>
 </div>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :experiences do
     resources :opinions
+    resources :watches, only: [:create]
   end
 
   resources :movies do

@@ -15,7 +15,7 @@
             <tr>
               <td><%= experience.title %></td>
               <td><%= experience.outline %></td>
-              <td><%= experience.number_of_incident %></td>
+              <td><%= experience.watches.count %></td>
               <td><%= link_to '詳細', experience_path(experience.id) %><%= link_to "編集", edit_experience_path(experience.id) %><%= link_to '削除', experience_path(experience.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
             </tr>
           <% end %>

@@ -9,4 +9,5 @@ class User < ApplicationRecord
 
   has_many :favorite_events, dependent: :destroy
   has_many :favorite_movies, dependent: :destroy
+
 end
