@@ -20,7 +20,8 @@ class ExperiencesController < ApplicationController
   end
 
   def show
-    @experience = Experience.find(params[:id])
+    @opinions = @experience.opinions
+    @opinion = @experience.opinions.build
   end
 
   def destroy

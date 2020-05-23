@@ -4,7 +4,7 @@
       <div class="experience_show_icon col-xs-12 col-md-4">
         <%= image_tag(@experience.icon.url) if @experience.icon && @experience.icon.url %>
       </div>
-        <div class="experience_show_table">
+        <div class="experience_show_table col-xs-12 col-md-12">
           <table>
             <tr>
               <th>タイトル</th><td><%= @experience.title %></td>
@@ -18,6 +18,16 @@
             </tr>
         </table>
       </div>
+    </div>
+    <div class="col-xs-6">
+
+    </div>
+    <div class="col-xs-6">
+      <p>コメント一覧</p>
+      <div id="opinions_area">
+        <%= render partial: 'opinions/index', locals: { opinions: @opinions, experience: @experience } %>
+      </div>
+      <%= render partial: 'opinions/form', locals: { opinion: @opinion, experience: @experience } %>
     </div>
   </div>
 </div>

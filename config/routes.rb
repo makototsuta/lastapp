@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root 'maps#index'
 
   resources :maps
-  resources :experiences
+
+  resources :experiences do
+    resources :opinions
+  end
 
   resources :movies do
     resources :comments

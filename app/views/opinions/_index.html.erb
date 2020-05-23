@@ -1,0 +1,9 @@
+<ul>
+  <% opinions.each do |opinion| %>
+    <% if opinion.id.present? %>
+      <li>
+        <p><%= opinion.content %></p>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
