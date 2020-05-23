@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:edit, :update, :destroy]
-#  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
     @movies = Movie.all
@@ -20,10 +20,16 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find(params[:id])
-    @comments = @movie.comments
-    @comment = @movie.comments.build
-    @favorite_movie = current_user.favorite_movies.find_by(movie_id: @movie.id)
+    if user_signed_in?
+      @movie = Movie.find(params[:id])
+      @comments = @movie.comments
+      @comment = @movie.comments.build
+      @favorite_movie = current_user.favorite_movies.find_by(movie_id: @movie.id)
+    else
+      @movie = Movie.find(params[:id])
+      @comments = @movie.comments
+      @comment = @movie.comments.build
+    end
   end
 
   def destroy

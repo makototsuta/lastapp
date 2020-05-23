@@ -42,6 +42,11 @@ p, ol, ul, td, a {
    margin-top: 50px;
  }
 
+ .new_event {
+   width: 100%;
+   text-align: right;
+ }
+
  .event_index {
    border-top: solid 1px #d4d8db;
    padding: 15px 0px 15px 0px;
@@ -64,6 +69,11 @@ p, ol, ul, td, a {
    float: left;
    margin-right: 20px;
    margin-top: 15px;
+ }
+
+ .new_movie {
+   width: 100%;
+   text-align: right;
  }
 
 .movie_index video {

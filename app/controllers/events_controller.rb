@@ -20,8 +20,12 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
-    @favorite_event = current_user.favorite_events.find_by(event_id: @event.id)
+    if user_signed_in?
+      @event = Event.find(params[:id])
+      @favorite_event = current_user.favorite_events.find_by(event_id: @event.id)
+    else
+      @event = Event.find(params[:id])
+    end
   end
 
   def destroy

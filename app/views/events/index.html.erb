@@ -1,5 +1,8 @@
 <div class="container">
   <div class="row">
+    <div class="new_event col-lg-12">
+      <%= link_to 'イベント投稿', new_event_path %>
+    </div>
     <% @events.each do |event| %>
       <div class="event_index col-lg-12">
         <div class="event_index_icon col-xs-12 col-md-4">
