@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :set_movie, only: [:edit, :update, :destroy]
 #  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
@@ -20,6 +20,7 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @movie = Movie.find(params[:id])
     @comments = @movie.comments
     @comment = @movie.comments.build
     @favorite_movie = current_user.favorite_movies.find_by(movie_id: @movie.id)
@@ -47,7 +48,11 @@ class MoviesController < ApplicationController
   end
 
   def set_movie
-    @movie = Movie.find(params[:id])
+    begin
+      @movie = current_user.movies.find(params[:id])
+    rescue
+      redirect_to movies_url
+    end
   end
 
 end

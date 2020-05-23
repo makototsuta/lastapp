@@ -26,9 +26,7 @@
               <th>主催者</th><td>:<%= event.user.name%></td>
             </tr>
             <tr>
-              <th></th><td><%= link_to '詳細', event_path(event.id) %>
-                          <%= link_to "編集", edit_event_path(event.id) %>
-                          <%= link_to '削除', event_path(event.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+              <th></th><td><%= link_to '詳細', event_path(event.id) %></td>
             </tr>
           </table>
         </div>

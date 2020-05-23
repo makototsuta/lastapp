@@ -16,6 +16,28 @@
  */
  @import "bootstrap";
 
+ .navbar {
+   background-color: #3a3f4f;
+ }
+
+ body {
+  background-color: #3a3f4f;
+  color: white;
+  margin: 0 33px 0 33px;
+  font-family: tahoma, verdana, arial, helvetica, sans-serif;
+}
+
+p, ol, ul, td, a {
+  font-family: tahoma, verdana, arial, helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 18px;
+  color: white;
+}
+
+.horror_level {
+  color: red;
+}
+
  .map_index {
    margin-top: 50px;
  }
@@ -103,7 +125,6 @@
 
 .user_movie {
   border: solid 1px #d4d8db;
-  box-sizing: content-box;
   height: 100%;
 }
 
@@ -196,4 +217,12 @@
 
 .map_each_movie p {
   margin-top: -50px;
+}
+
+.card {
+  background-color: #3a3f4f;
+}
+
+.card-header {
+  height: 0px;
 }

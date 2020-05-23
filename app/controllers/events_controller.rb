@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
@@ -20,6 +20,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @event = Event.find(params[:id])
     @favorite_event = current_user.favorite_events.find_by(event_id: @event.id)
   end
 
@@ -45,7 +46,11 @@ class EventsController < ApplicationController
   end
 
   def set_event
-    @event = Event.find(params[:id])
+    begin
+      @event = current_user.events.find(params[:id])
+    rescue
+      redirect_to events_url
+    end
   end
 
 end
