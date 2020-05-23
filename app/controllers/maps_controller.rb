@@ -1,5 +1,5 @@
 class MapsController < ApplicationController
-  before_action :set_map, only: [:show, :edit, :update, :destroy]
+  before_action :set_map, only: [:edit, :update, :destroy]
 
   def index
     @maps = Map.all
@@ -8,7 +8,9 @@ class MapsController < ApplicationController
   end
 
   def new
-    @map = Map.new
+    if current_user.admin?
+      @map = Map.new
+    end
   end
 
   def create
@@ -21,6 +23,7 @@ class MapsController < ApplicationController
   end
 
   def show
+    @map = Map.find(params[:id])
   end
 
   def destroy
@@ -45,7 +48,9 @@ class MapsController < ApplicationController
   end
 
   def set_map
-    @map = Map.find(params[:id])
+    if current_user.admin?
+      @map = Map.find(params[:id])
+    end
   end
 
 end

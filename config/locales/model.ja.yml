@@ -15,7 +15,7 @@ ja:
         password: パスワード
         password_confirmation: 確認用パスワード
         birthed_at: 誕生日
-        sex: 生年月日
+        sex: 性別
         address: 住所
         mobile_number: 携帯番号
         introduction: 自己紹介

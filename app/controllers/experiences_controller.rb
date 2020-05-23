@@ -1,5 +1,5 @@
 class ExperiencesController < ApplicationController
-  before_action :set_experience, only: [:show, :edit, :update, :destroy]
+  before_action :set_experience, only: [:edit, :update, :destroy]
 
   def index
     @experiences = Experience.all
@@ -7,7 +7,9 @@ class ExperiencesController < ApplicationController
   end
 
   def new
-    @experience = Experience.new
+    if current_user.admin?
+      @experience = Experience.new
+    end
   end
 
   def create
@@ -20,6 +22,7 @@ class ExperiencesController < ApplicationController
   end
 
   def show
+    @experience = Experience.find(params[:id])
     @opinions = @experience.opinions
     @opinion = @experience.opinions.build
   end
@@ -46,7 +49,9 @@ class ExperiencesController < ApplicationController
   end
 
   def set_experience
-    @experience = Experience.find(params[:id])
+    if current_user.admin?
+      @experience = Experience.find(params[:id])
+    end
   end
 
 end
