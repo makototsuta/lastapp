@@ -1,3 +1,14 @@
+Movie.create!(
+  [
+    {title: 'クワイエット・プレイス', content: '音を立てたら即死　静寂の世界で生き延びるホラー', icon:File.open("#{Rails.root}/app/assets/images/【恐怖GIF画像】あなたは最後まで見られるか？ 怖いホラーGIFまとめ.mp4"), user_id: '1'},
+    {title: '史上最も不快なホラーがついに公開！', content: '姉は精神を病み家に囚われ、妹は家を出て幸せを手に入れた。 姉妹がその家で再会した時、あの惨劇が再び幕を開ける―', icon:File.open("#{Rails.root}/app/assets/images/【恐怖GIF画像】あなたは最後まで見られるか？ 怖いホラーGIFまとめ.mp4"), user_id: '2'},
+    {title: '果たして少女は魔女なのか!?', content: '本作は全世界24の映画祭に招待され、ファンの圧倒的な支持を獲得した新感覚のダーク・ファンタジー・ホラー！', icon:File.open("#{Rails.root}/app/assets/images/【恐怖GIF画像】あなたは最後まで見られるか？ 怖いホラーGIFまとめ.mp4"), user_id: '3'},
+    {title: '『コンジアム』', content: '実在する精神病院の廃墟を舞台としたコリアンホラー', icon:File.open("#{Rails.root}/app/assets/images/【恐怖GIF画像】あなたは最後まで見られるか？ 怖いホラーGIFまとめ.mp4"), user_id: '4'},
+    {title: 'パソコンに表示されたSNSが...', content: 'SNSの画面だけで展開する新感覚ホラー。仲良しグループが、ネットいじめで自殺した少女の怨念に襲われる恐怖を描く。', icon:File.open("#{Rails.root}/app/assets/images/【恐怖GIF画像】あなたは最後まで見られるか？ 怖いホラーGIFまとめ.mp4"), user_id: '5'},
+    {title: '血も凍る学園ホラー、本当に恐ろしいのは誰!?', content: '小さなモンスターを捕まえて独自の「調査」と「実験」を始めるが、やがてモンスターは彼らの手に負えなくなっていく', icon:File.open("#{Rails.root}/app/assets/images/【恐怖GIF画像】あなたは最後まで見られるか？ 怖いホラーGIFまとめ.mp4"), user_id: '1'}
+  ]
+)
+
 Map.create!(
   [
     {name: '番町皿屋敷（お菊の皿）', address: '東京都千代田区五番町', content: '市ヶ谷駅近辺、千代田区九段南四丁目と五番町の境界の靖国通りから番町方面へ上る坂は、帯坂と呼称されるが、お菊が、髪をふり乱し、帯をひきずりながらここを通ったという曰くがある。', horror_level: '★★', icon:File.open("#{Rails.root}/app/assets/images/okiku_hirosige.jpg")},
@@ -29,16 +40,6 @@ Event.create!(
   ]
 )
 
-Movie.create!(
-  [
-    {title: 'クワイエット・プレイス', content: '音を立てたら即死　静寂の世界で生き延びるホラー', icon:File.open("#{Rails.root}/app/assets/images/【恐怖GIF画像】あなたは最後まで見られるか？ 怖いホラーGIFまとめ.mp4"), user_id: '1'},
-    {title: '史上最も不快なホラーがついに公開！', content: '姉は精神を病み家に囚われ、妹は家を出て幸せを手に入れた。 姉妹がその家で再会した時、あの惨劇が再び幕を開ける―', icon:File.open("#{Rails.root}/app/assets/images/【恐怖GIF画像】あなたは最後まで見られるか？ 怖いホラーGIFまとめ.mp4"), user_id: '2'},
-    {title: '果たして少女は魔女なのか!?', content: '本作は全世界24の映画祭に招待され、ファンの圧倒的な支持を獲得した新感覚のダーク・ファンタジー・ホラー！', icon:File.open("#{Rails.root}/app/assets/images/果たして少女は魔女なのか!.mp4"), user_id: '3'},
-    {title: '『コンジアム』', content: '実在する精神病院の廃墟を舞台としたコリアンホラー', icon:File.open("#{Rails.root}/app/assets/images/【恐怖GIF画像】あなたは最後まで見られるか？ 怖いホラーGIFまとめ.mp4"), user_id: '4'},
-    {title: 'パソコンに表示されたSNSが...', content: 'SNSの画面だけで展開する新感覚ホラー。仲良しグループが、ネットいじめで自殺した少女の怨念に襲われる恐怖を描く。', icon:File.open("#{Rails.root}/app/assets/images/【恐怖GIF画像】あなたは最後まで見られるか？ 怖いホラーGIFまとめ.mp4"), user_id: '5'},
-    {title: '血も凍る学園ホラー、本当に恐ろしいのは誰!?', content: '小さなモンスターを捕まえて独自の「調査」と「実験」を始めるが、やがてモンスターは彼らの手に負えなくなっていく', icon:File.open("#{Rails.root}/app/assets/images/【恐怖GIF画像】あなたは最後まで見られるか？ 怖いホラーGIFまとめ.mp4"), user_id: '1'}
-  ]
-)
 
 Experience.create!(
   [
