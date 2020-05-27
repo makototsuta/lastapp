@@ -1,3 +1,15 @@
+User.create!(
+  [
+    {id: '1', name: 'satou', email: 'satou@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/satou.png"), password: '111111', birthed_at: '1990-01-10', sex: '男', address: '東京都台東区上野５丁目２４−１１', mobile_number: '090-1111-2222', introduction: '宜しくお願いします' },
+    {id: '2', name: 'tanaka', email: 'tanaka@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/tanaka.png"), password: '222222', birthed_at: '1989-02-10', sex: '女', address: '東京都中野区中野1丁目４−１', mobile_number: '080-1211-2222', introduction: '初めまして' },
+    {id: '3', name: 'suzuki', email: 'suzuki@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/suzuki.jpeg"), password: '333333', birthed_at: '1985-05-16', sex: '男', address: '神奈川県川崎市川崎2丁目４−１', mobile_number: '070-1211-2222', introduction: '鈴木です。宜しく' },
+    {id: '4', name: 'kimura', email: 'kimura@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/kimura.jpeg"), password: '444444', birthed_at: '1977-03-20', sex: '男', address: '静岡県静岡市掛川4丁目４−１', mobile_number: '090-1211-2222', introduction: '木村です。頑張りましょう' },
+    {id: '5', name: 'sakamoto', email: 'sakamoto@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/sakamoto.jpeg"), password: '555555', birthed_at: '1950-04-20', sex: '男', address: '栃木県栃木市5丁目４−１', mobile_number: '090-1211-3333', introduction: '坂本です。初めまして' },
+    {id: '6', name: '管理者', email: 'admin@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/sakamoto.jpeg"), password: '555555', birthed_at: '1950-04-20', sex: '男', address: '栃木県栃木市5丁目４−１', mobile_number: '090-1211-3333', introduction: '管理者です。初めまして', admin: 'true' }
+  ]
+)
+
+
 Movie.create!(
   [
     {title: 'クワイエット・プレイス', content: '音を立てたら即死　静寂の世界で生き延びるホラー', icon:File.open("#{Rails.root}/app/assets/images/【恐怖GIF画像】あなたは最後まで見られるか？ 怖いホラーGIFまとめ.mp4"), user_id: '1'},
@@ -16,17 +28,6 @@ Map.create!(
     {name: '白金トンネル', address: '東京都品川区上大崎２丁目ー７', content: '事故が多発し心霊スポット化。隣の国立科学博物館附属自然教育園は、元は国立予防衛生研究所だったため、その因縁も噂される。', horror_level: '★★★', icon:File.open("#{Rails.root}/app/assets/images/s_MG_9207.jpg")},
     {name: 'たっちゃん池（宅部池）', address: '東京都東村山市多摩湖町３丁目１７−１９', content: '大正14年、たっちゃんと呼ばれていた少年が池に落ち、助けに入った青年2人と共に亡くなる。', horror_level: '★★★', icon:File.open("#{Rails.root}/app/assets/images/maxresdefault.jpg")},
     {name: '八王子トンネル', address: '東京都八王子市国道16号線', content: '赤い洋服を着た幽霊がでるという噂もあり、肝試しで訪れる方も多い心霊スポット。トンネルは霊が集まりやすい場所と言われていますので、安易な気持ちで近づかないようにご注意。', horror_level: '★★★★', icon:File.open("#{Rails.root}/app/assets/images/180_1.jpg")}
-  ]
-)
-
-User.create!(
-  [
-    {id: '1', name: 'satou', email: 'satou@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/satou.png"), password: '111111', birthed_at: '1990-01-10', sex: '男', address: '東京都台東区上野５丁目２４−１１', mobile_number: '090-1111-2222', introduction: '宜しくお願いします' },
-    {id: '2', name: 'tanaka', email: 'tanaka@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/tanaka.png"), password: '222222', birthed_at: '1989-02-10', sex: '女', address: '東京都中野区中野1丁目４−１', mobile_number: '080-1211-2222', introduction: '初めまして' },
-    {id: '3', name: 'suzuki', email: 'suzuki@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/suzuki.jpeg"), password: '333333', birthed_at: '1985-05-16', sex: '男', address: '神奈川県川崎市川崎2丁目４−１', mobile_number: '070-1211-2222', introduction: '鈴木です。宜しく' },
-    {id: '4', name: 'kimura', email: 'kimura@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/kimura.jpeg"), password: '444444', birthed_at: '1977-03-20', sex: '男', address: '静岡県静岡市掛川4丁目４−１', mobile_number: '090-1211-2222', introduction: '木村です。頑張りましょう' },
-    {id: '5', name: 'sakamoto', email: 'sakamoto@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/sakamoto.jpeg"), password: '555555', birthed_at: '1950-04-20', sex: '男', address: '栃木県栃木市5丁目４−１', mobile_number: '090-1211-3333', introduction: '坂本です。初めまして' },
-    {id: '6', name: '管理者', email: 'admin@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/sakamoto.jpeg"), password: '555555', birthed_at: '1950-04-20', sex: '男', address: '栃木県栃木市5丁目４−１', mobile_number: '090-1211-3333', introduction: '管理者です。初めまして', admin: 'true' }
   ]
 )
 
