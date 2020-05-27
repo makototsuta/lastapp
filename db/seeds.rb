@@ -15,7 +15,7 @@ User.create!(
     {id: '3', name: 'suzuki', email: 'suzuki@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/suzuki.jpeg"), password: '333333', birthed_at: '1985-05-16', sex: '男', address: '神奈川県川崎市川崎2丁目４−１', mobile_number: '070-1211-2222', introduction: '鈴木です。宜しく' },
     {id: '4', name: 'kimura', email: 'kimura@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/kimura.jpeg"), password: '444444', birthed_at: '1977-03-20', sex: '男', address: '静岡県静岡市掛川4丁目４−１', mobile_number: '090-1211-2222', introduction: '木村です。頑張りましょう' },
     {id: '5', name: 'sakamoto', email: 'sakamoto@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/sakamoto.jpeg"), password: '555555', birthed_at: '1950-04-20', sex: '男', address: '栃木県栃木市5丁目４−１', mobile_number: '090-1211-3333', introduction: '坂本です。初めまして' },
-    {name: ‘管理者’, email: 'admin@example.jp', icon:File.open("#{Rails.root}/app/assets/images/ダウンロード (1).jpeg"), password: '11111111, birthed_at: '1955-04-20', admin: true, sex: '男', address: ' 埼玉県埼玉市5丁目４−１', mobile_number: '090-1211-4444’, introduction: ‘管理者です。初めまして' }
+    {id: '6', name: '管理者', email: 'sakamoto@yahoo.co.jp', icon:File.open("#{Rails.root}/app/assets/images/sakamoto.jpeg"), password: '555555', birthed_at: '1950-04-20', sex: '男', address: '栃木県栃木市5丁目４−１', mobile_number: '090-1211-3333', introduction: '管理者です。初めまして', admin: 'true' }
   ]
 )
 
