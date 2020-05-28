@@ -110,12 +110,12 @@ ActiveRecord::Schema.define(version: 2020_05_23_223825) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.string "name", null: false
-    t.text "icon", null: false
+    t.text "icon"
     t.date "birthed_at"
     t.string "sex", null: false
     t.string "address", null: false
     t.string "mobile_number", null: false
-    t.string "introduction", null: false
+    t.string "introduction"
     t.boolean "admin", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true

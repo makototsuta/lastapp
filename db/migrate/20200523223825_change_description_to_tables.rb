@@ -24,8 +24,8 @@ class ChangeDescriptionToTables < ActiveRecord::Migration[5.2]
     change_column_null :users, :sex, false, 0
     change_column_null :users, :name, false, 0
     change_column_null :users, :address, false, 0
-    change_column_null :users, :icon, false, 0
+    change_column_null :users, :icon, default:"0"
     change_column_null :users, :mobile_number, false, 0
-    change_column_null :users, :introduction, false,0
+    change_column_null :users, :introduction, default: "こんにちは"
   end
 end

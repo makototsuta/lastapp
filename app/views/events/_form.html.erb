@@ -10,32 +10,32 @@
     </div>
   <% end %>
 
-  <div class="event_title">
-    <%= form.label :title %>
+  <div class="field">
+    <%= form.label :title %><br>
     <%= form.text_field :title %>
   </div>
-  <div class="event_day_time_at">
-    <%= form.label :day_time_at %>
+  <div class="field">
+    <%= form.label :day_time_at %><br>
     <%= form.date_select :day_time_at,{use_month_numbers: true, start_year: (Date.today).year, default: Date.today} %>
   </div>
-  <div class="event_participant_number">
-    <%= form.label :participant_number %>
+  <div class="field">
+    <%= form.label :participant_number %><br>
     <%= form.text_field :participant_number %>
   </div>
-  <div class="event_address">
-    <%= form.label :address %>
+  <div class="field">
+    <%= form.label :address %><br>
     <%= form.text_field :address %>
   </div>
-  <div class="event_outline">
-    <%= form.label :outline %>
+  <div class="field">
+    <%= form.label :outline %><br>
     <%= form.text_field :outline %>
   </div>
-  <div class="event_content">
-    <%= form.label :content %>
+  <div class="field">
+    <%= form.label :content %><br>
     <%= form.text_area :content %>
   </div>
-  <div class="event_icon_new">
-    <%= form.label :icon %>
+  <div class="field">
+    <%= form.label :icon %><br>
     <%= image_tag(@event.icon.url) if @event.icon && @event.icon.url %>
     <%= form.file_field :icon %>
     <%= form.hidden_field :icon_cache %>

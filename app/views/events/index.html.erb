@@ -6,8 +6,11 @@
         <%= form.search_field :address_cont, class: "form-control col-sm-4" %>
       </div>
       <div class="event_search form-group row">
-        <%= form.label :day_time_at_gteq, "開催日時", class: "col-sm-2 col-form-label" %>
-        <%= form.search_field :day_time_at_gteq, class: "form-control col-sm-4" %>
+        <%= form.label :day_time_at_gteq, "開催日", class: "col-sm-2 col-form-label" %>
+        <%= form.date_select :day_time_at_gteq, {use_month_numbers: true, start_year: (Date.today).year, default: Date.today} %>
+
+        <%= form.label :day_time_at_gteq, "〜", class: "col-form-label" %>
+        <%= form.date_select :day_time_at_lteq, {use_month_numbers: true, start_year: (Date.today).year, default: Date.today} %>
       </div>
       <div class="form-group">
         <%= form.submit "検索" %>

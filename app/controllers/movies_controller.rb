@@ -20,15 +20,11 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @movie = Movie.find(params[:id])
+    @comments = @movie.comments
+    @comment = @movie.comments.build
     if user_signed_in?
-      @movie = Movie.find(params[:id])
-      @comments = @movie.comments
-      @comment = @movie.comments.build
       @favorite_movie = current_user.favorite_movies.find_by(movie_id: @movie.id)
-    else
-      @movie = Movie.find(params[:id])
-      @comments = @movie.comments
-      @comment = @movie.comments.build
     end
   end
 

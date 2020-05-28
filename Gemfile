@@ -79,3 +79,7 @@ gem 'mini_magick'
 gem 'streamio-ffmpeg'
 gem 'ransack'
 gem 'letter_opener_web'
+gem 'file_validators'
+gem "bootstrap4-datetime-picker-rails"
+gem 'momentjs-rails'
+gem "font-awesome-rails"
