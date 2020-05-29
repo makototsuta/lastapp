@@ -5,7 +5,7 @@ class User < ApplicationRecord
   before_validation { email.downcase! }
   validates :password,  presence: true, length: { maximum: 30 }
   validates :address,  presence: true, length: { maximum: 255 }
-  validates :icon,  presence: true
+  validates :icon,  presence: true, allow_blank: true
   validates :birthed_at,  presence: true
   validates :name,  presence: true, length: { maximum: 50 }
   validates :sex,  presence: true
