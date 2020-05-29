@@ -5,8 +5,7 @@ class User < ApplicationRecord
   before_validation { email.downcase! }
   validates :password,  presence: true, length: { maximum: 30 }
   validates :address,  presence: true, length: { maximum: 255 }
-  validates :icon, inclusion: { in: %w(jpg jpeg png tif),
-  message: "jpg jpeg png tif以外のファイルは使えません。" }, allow_blank: true
+  validates :icon, length: { maximum: 50 }
   validates :birthed_at,  presence: true
   validates :name,  presence: true, length: { maximum: 50 }
   validates :sex,  presence: true
