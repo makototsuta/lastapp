@@ -14,7 +14,7 @@
  *= require_tree .
  *= require_self
  */
- 
+
  @import "bootstrap";
 
  .field {
@@ -38,6 +38,10 @@ p, ol, ul, td, a {
   line-height: 18px;
   color: white;
 }
+
+ .gm-style-iw-d {
+   color: gray;
+ }
 
 #gmap {
   margin-bottom: 30px;
