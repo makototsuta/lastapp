@@ -16,7 +16,7 @@
               <td><%= experience.title %></td>
               <td><%= experience.outline %></td>
               <td><%= experience.watches.count %></td>
-              <td><%= link_to '詳細', experience_path(experience.id) %></td>
+              <td><%= link_to '詳細', experience_path(experience.id), class: 'btn btn-light btn-sm' %></td>
             </tr>
           <% end %>
         <% end %>
@@ -37,7 +37,7 @@
               <td><%= experience.title %></td>
               <td><%= experience.outline %></td>
               <td><%= experience.number_of_incident %></td>
-              <td><%= link_to '詳細', experience_path(experience.id) %></td>
+              <td><%= link_to '詳細', experience_path(experience.id), class: 'btn btn-light btn-sm' %></td>
             </tr>
           <% end %>
         <% end %>
@@ -58,7 +58,7 @@
               <td><%= experience.title %></td>
               <td><%= experience.outline %></td>
               <td><%= experience.number_of_incident %></td>
-              <td><%= link_to '詳細', experience_path(experience.id) %></td>
+              <td><%= link_to '詳細', experience_path(experience.id), class: 'btn btn-light btn-sm' %></td>
             </tr>
           <% end %>
         <% end %>
