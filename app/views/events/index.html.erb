@@ -45,7 +45,7 @@
               <th>主催者</th><td>:<%= event.user.name%></td>
             </tr>
             <tr>
-              <th></th><td><%= link_to '詳細', event_path(event.id) %></td>
+              <th></th><td><%= link_to '詳細', event_path(event.id), class: 'btn btn-light btn-sm' %></td>
             </tr>
           </table>
         </div>

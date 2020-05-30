@@ -63,7 +63,7 @@
                   <th>詳細</th><td><%= event.content %></td>
                 </tr>
                 <tr>
-                  <th></th><td><%= link_to "編集", edit_event_path(event.id) %><%= link_to '削除', event_path(event.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+                  <th></th><td><%= link_to "編集", edit_event_path(event.id) , class: 'btn btn-light btn-sm'%><%= link_to '削除', event_path(event.id), method: :delete, data: { confirm: '本当に削除していいですか？' } , class: 'btn btn-light btn-sm'%></td>
                 </tr>
               </table>
             </div>

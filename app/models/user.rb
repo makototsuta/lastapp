@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :introduction, length: { maximum: 50 }
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable #, :confirmable
   has_many :events
   has_many :movies
   mount_uploader :icon, ImageUploader
