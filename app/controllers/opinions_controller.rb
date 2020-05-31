@@ -8,7 +8,8 @@ class OpinionsController < ApplicationController
       if @opinion.save
         format.js { render :index }
       else
-        format.html { redirect_to experience_path(@experience), notice: '投稿できませんでした...' }
+        flash.now[:notice] = '投稿できませんでした。'
+        format.html { redirect_to experience_path(@experience) }
       end
     end
   end

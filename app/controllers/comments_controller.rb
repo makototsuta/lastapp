@@ -7,9 +7,19 @@ class CommentsController < ApplicationController
       if @comment.save
         format.js { render :index }
       else
-        format.html { redirect_to movie_path(@movie), notice: '投稿できませんでした...' }
+        flash.now[:notice] = '投稿できませんでした。'
+        format.html { redirect_to movie_path(@movie) }
       end
     end
+  end
+
+  def edit; end
+
+  def update; end
+
+  def destroy
+    @comment = Comment.find_by(id: params[:id])
+    @comment.destroy!
   end
   private
   # ストロングパラメーター

@@ -1,4 +1,5 @@
 <!-- この記述がblogのshow画面に表示されるコメント入力欄になります -->
+
 <%= form_with(model: [movie, comment]) do |form| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
@@ -17,4 +18,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>
