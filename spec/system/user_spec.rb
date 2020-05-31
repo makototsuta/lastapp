@@ -4,6 +4,7 @@ RSpec.describe 'ユーザー管理機能', type: :system do
   before do
     FactoryBot.create(:user)
     FactoryBot.create(:event, user_id: '1')
+    FactoryBot.create(:movie, user_id: '1')
 
     visit new_user_session_path
     fill_in 'メールアドレス', with: '111111@yahoo.co.jp'
@@ -20,7 +21,7 @@ RSpec.describe 'ユーザー管理機能', type: :system do
     context 'イベントを作成した場合' do
       it '作成済みのイベントが表示される' do
         visit users_path
-        expect(page).to have_content 'タイトル'
+        expect(page).to have_content 'アドレス'
       end
     end
     context 'イベントを削除した場合' do

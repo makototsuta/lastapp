@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :birthed_at,  presence: true
   validates :name,  presence: true, length: { maximum: 50 }
   validates :sex,  presence: true
-  validates :mobile_number,  presence: true, length: { maximum: 50 }, format:   { with: /\A\d{10}$|^\d{11}\z/ }
+  validates :mobile_number, length: { maximum: 50 }, format: { with: /\A\d{10}$|^\d{11}\z/ }, presence: true
   validates :introduction, length: { maximum: 50 }
 
   devise :database_authenticatable, :registerable,

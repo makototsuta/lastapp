@@ -9,7 +9,7 @@ RSpec.describe 'マップ管理機能', type: :system do
       it '住所で検索できる' do
         visit root_path
 
-        fill_in '心霊スポット住所検索', with: '住所'
+        fill_in '住所検索', with: '住所'
         click_on '検索'
 
         expect(page).to have_content '名前'
