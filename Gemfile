@@ -83,3 +83,4 @@ gem 'file_validators'
 gem "bootstrap4-datetime-picker-rails"
 gem 'momentjs-rails'
 gem "font-awesome-rails"
+gem 'jc-validates_timeliness'

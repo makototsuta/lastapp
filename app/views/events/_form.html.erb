@@ -16,7 +16,7 @@
   </div>
   <div class="field">
     <%= form.label :day_time_at %><br>
-    <%= form.date_select :day_time_at,{use_month_numbers: true, start_year: (Date.today).year, default: Date.today} %>
+    <%= form.date_select :day_time_at,{use_month_numbers: true, start_date:Date.today, default: Date.today} %>
   </div>
   <div class="field">
     <%= form.label :participant_number %><br>
