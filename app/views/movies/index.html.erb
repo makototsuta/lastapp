@@ -1,12 +1,12 @@
-<h1>動画一覧</h1>
+<h3>投稿動画一覧</h3>
 <div class="container">
   <div class="row">
-    <div class="new_movie col-lg-12">
+    <div class="new_movie col-sm-12">
       <%= link_to '動画投稿', new_movie_path %>
     </div>
     <div class="movie_index">
       <% @movies.each do |movie| %>
-      <div class="each_movie col-xs-12 col-md-6 col-lg-4">
+      <div class="each_movie col-sm-12 col-md-6 col-lg-4">
         <%= video_tag movie.icon.url, controls: true, autobuffer: true %>
         <%= link_to movie.title, movie_path(movie.id) %>
         <div><%= movie.user.name %></div>

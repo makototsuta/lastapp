@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="event_index col-lg-12">
-      <div class="event_show_icon col-xs-12 col-md-4">
+    <div class="event_show col-sm-12">
+      <div class="event_show_icon col-sm-12 col-md-6 col-lg-4">
         <%= image_tag(@event.icon.url) if @event.icon && @event.icon.url %>
       </div>
-        <div class="event_index_table">
+        <div class="event_show_table col-sm-12 col-md-6 col-lg-8">
           <table>
             <tr>
               <th>タイトル</th><td>:<%= @event.title %></td>
@@ -26,10 +26,12 @@
             </tr>
         </table>
       </div>
-      <div class="event_show_icon col-xs-12 col-md-4">
+    </div>
+    <div class="event_user col-sm-12">
+      <div class="event_show_usericon col-sm-12 col-md-6 col-lg-4">
         <%= image_tag(@event.user.icon.url) if @event.user.icon && @event.user.icon.url %>
       </div>
-        <div class="event_index_table">
+        <div class="event_show_usertable col-sm-12 col-md-6 col-lg-8">
           <table>
             <tr>
               <th>主催者名</th><td>:<%= @event.user.name %></td>
