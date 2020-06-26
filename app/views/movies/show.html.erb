@@ -1,27 +1,27 @@
-<h1>動画詳細画面</h1>
-
-<% if user_signed_in? %>
-  <% unless @movie.user_id == current_user.id %>
-    <% if @favorite_movie.present? %>
-      <%= link_to 'お気に入り解除する', favorite_movie_path(id: @favorite_movie.id), method: :delete, class: 'btn btn-danger' %>
-    <% else %>
-      <%= link_to 'お気に入りする', favorite_movies_path(movie_id: @movie.id), method: :post, class: 'btn btn-primary' %>
-    <% end %>
-  <% end %>
-<% else %>
-  <%= link_to 'お気に入りする', new_user_session_path, class: 'btn btn-primary' %>
-<% end %>
-
 <div class="container">
   <div class="row">
-    <div class="movie-show col-xs-6">
+    <div class="movie-show col-sm-12 col-md-8">
       <%= video_tag @movie.icon.url, controls: true, autobuffer: true %>
       <h4><%= @movie.title %></h4>
       <div><%= @movie.user.name %></div>
       <div><%= @movie.content %></div>
+      <div class="movie-show-button">
+        <% if user_signed_in? %>
+          <% unless @movie.user_id == current_user.id %>
+            <% if @favorite_movie.present? %>
+              <%= link_to 'お気に入り解除する', favorite_movie_path(id: @favorite_movie.id), method: :delete, class: 'btn btn-light btn-sm' %>
+            <% else %>
+              <%= link_to 'お気に入りする', favorite_movies_path(movie_id: @movie.id), method: :post, class: 'btn btn-light btn-sm' %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= link_to 'お気に入りする', new_user_session_path, class: 'btn btn-primary' %>
+        <% end %>
+      </div>
     </div>
-    <div class="col-xs-6">
-      <p>コメント一覧</p>
+    <div class="col-sm-12 col-md-4">
+      <hr>
+      <p><コメント一覧></p>
       <div id="comments_area">
         <%= render partial: 'comments/index', locals: { comments: @comments, movie: @movie } %>
       </div>
@@ -29,5 +29,3 @@
     </div>
   </div>
 </div>
-
-<%= link_to '動画一覧画面に戻る',movies_path %>

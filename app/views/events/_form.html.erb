@@ -36,7 +36,7 @@
   </div>
   <div class="field">
     <%= form.label :icon %><br>
-    <%= image_tag(@event.icon.url) if @event.icon && @event.icon.url %>
+    <%= image_tag(@event.icon.url) if @event.icon && @event.icon.url %><br>
     <%= form.file_field :icon %>
     <%= form.hidden_field :icon_cache %>
   </div>

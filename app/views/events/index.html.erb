@@ -27,22 +27,22 @@
         <div class="event_index_table col-sm-12 col-md-6 col-lg-8">
           <table>
             <tr>
-              <th>タイトル</th><td>:<%= event.title %></td>
+              <th>タイトル</th><td><%= event.title %></td>
             </tr>
             <tr>
-              <th>開催地</th><td>:<%= event.address %></td>
+              <th>開催地</th><td><%= event.address %></td>
             </tr>
             <tr>
-              <th>開催日時</th><td>:<%= event.day_time_at %></td>
+              <th>開催日時</th><td><%= event.day_time_at %></td>
             </tr>
             <tr>
-              <th>催行人数</th><td>:<%= event.participant_number %></td>
+              <th>催行人数</th><td><%= event.participant_number %></td>
             </tr>
             <tr>
-              <th>開催概要</th><td>:<%= event.outline %></td>
+              <th>開催概要</th><td><%= event.outline %></td>
             </tr>
             <tr>
-              <th>主催者</th><td>:<%= event.user.name%></td>
+              <th>主催者</th><td><%= event.user.name%></td>
             </tr>
             <tr>
               <th></th><td><%= link_to '詳細', event_path(event.id), class: 'btn btn-light btn-sm' %></td>

@@ -2,8 +2,8 @@
   <div class="row">
     <div class="experience">
       <p>初級編</p>
-      <div class="low col-xs-12 col-xs-12 col-lg-12">
-        <table>
+      <div class="low col-sm-12">
+        <table class ='experience'>
           <tr>
             <th>タイトル</th>
             <th>概要</th>
@@ -13,7 +13,7 @@
         <% @experiences.each do |experience| %>
           <% if experience.danger_level == "1" %>
             <tr>
-              <td><%= experience.title %></td>
+              <td class='icon1'><%= experience.title %></td>
               <td><%= experience.outline %></td>
               <td><%= experience.watches.count %></td>
               <td><%= link_to '詳細', experience_path(experience.id), class: 'btn btn-light btn-sm' %></td>
@@ -23,8 +23,8 @@
         </table>
       </div>
       <p>中級編</p>
-      <div class="middle col-xs-12 col-xs-12 col-lg-12">
-        <table>
+      <div class="middle col-sm-12">
+        <table class ='experience'>
           <tr>
             <th>タイトル</th>
             <th>概要</th>
@@ -34,7 +34,7 @@
         <% @experiences.each do |experience| %>
           <% if experience.danger_level == "2" %>
             <tr>
-              <td><%= experience.title %></td>
+              <td class='icon2'><%= experience.title %></td>
               <td><%= experience.outline %></td>
               <td><%= experience.watches.count %></td>
               <td><%= link_to '詳細', experience_path(experience.id), class: 'btn btn-light btn-sm' %></td>
@@ -44,8 +44,8 @@
         </table>
       </div>
       <p>上級編</p>
-      <div class="high col-xs-12 col-xs-12 col-lg-12">
-        <table>
+      <div class="high col-sm-12">
+        <table class ='experience'>
           <tr>
             <th>タイトル</th>
             <th>概要</th>
@@ -55,7 +55,7 @@
         <% @experiences.each do |experience| %>
           <% if experience.danger_level == "3" %>
             <tr>
-              <td><%= experience.title %></td>
+              <td class='icon3'><%= experience.title %></td>
               <td><%= experience.outline %></td>
               <td><%= experience.watches.count %></td>
               <td><%= link_to '詳細', experience_path(experience.id), class: 'btn btn-light btn-sm' %></td>

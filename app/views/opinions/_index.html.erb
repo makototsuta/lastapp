@@ -3,10 +3,13 @@
     <% if opinion.id.present? %>
       <li>
         <div class="opinion-content" id ="this_opinion_<%= opinion.id %>"></div>
-        <p><%= opinion.content %></p>
-        <p><%= link_to "コメント編集", edit_experience_opinion_path(experience, opinion), remote: true %></p>
-
-        <p><%= link_to "コメント削除", experience_opinion_path(opinion.experience_id, opinion.id), method: :delete, remote: true, data: { confirm: "本当に削除しますか?"} %></p>
+        <span><%= opinion.content %></span>
+        <%= link_to edit_experience_opinion_path(experience, opinion), remote: true do %>
+          <i class="far fa-edit"></i>
+        <% end %>
+        <%= link_to experience_opinion_path(opinion.experience_id, opinion.id), method: :delete, remote: true, data: { confirm: "本当に削除しますか?"} do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
       </li>
     <% end %>
   <% end %>

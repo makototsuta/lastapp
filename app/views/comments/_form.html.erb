@@ -9,12 +9,13 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= form.label :content %>
+  <div class="fields">
+    <hr>
+    <%= form.label :コメントを投稿する %><br>
     <%= form.text_area :content %>
   </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "投稿", class: "float-right" %>
   </div>
 
 <% end %>

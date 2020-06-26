@@ -3,7 +3,6 @@
     <% @users.each do |user| %>
       <% if user == current_user %>
       <p>プロフィール</p>
-      <%= link_to "編集", edit_user_registration_path(user.id) %>
         <div class="user_index col-lg-12">
           <div class="col-xs-12 col-md-4">
             <%= image_tag(user.icon.url) if user.icon && user.icon.url %>
@@ -30,6 +29,9 @@
               </tr>
               <tr>
                 <th>自己紹介</th><td><%= user.introduction %></td>
+              </tr>
+              <tr>
+                <th></th><td><%= link_to "編集", edit_user_registration_path(user.id), class: 'btn btn-light btn-sm' %></td>
               </tr>
             </table>
           </div>
