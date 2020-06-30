@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <%= search_form_for @q do |form| %>
+      <div class="event_search form-group row">
+        <%= form.label :address_cont, "開催地", class: "col-sm-2 col-form-label" %>
+        <%= form.search_field :address_cont, class: "form-control col-sm-4" %>
+      </div>
+      <div class="event_search form-group row">
+        <%= form.label :day_time_at_gteq, "開催日", class: "col-sm-2 col-form-label" %>
+        <%= form.date_select :day_time_at_gteq, {use_month_numbers: true, start_year: (Date.today).year, include_blank: true } %>
+
+        <%= form.label :day_time_at_gteq, "－", class: "col-form-label" %>
+        <%= form.date_select :day_time_at_lteq, {use_month_numbers: true, start_year: (Date.today).year, include_blank: true } %>
+      </div>
+      <div class="form-group">
+        <%= form.submit "検索" %>
+      </div>
+    <% end %>
+    <div class="new_event col-lg-12">
+      <%= link_to 'イベント投稿', new_event_path %>
+    </div>
+    <% @events.each do |event| %>
+      <div class="event_index col-sm-12">
+        <div class="event_index_icon col-sm-12 col-md-6 col-lg-4">
+          <%= image_tag(event.icon.url) if event.icon && event.icon.url %>
+        </div>
+        <div class="event_index_table col-sm-12 col-md-6 col-lg-8">
+          <table>
+            <tr>
+              <th>タイトル</th><td><%= event.title %></td>
+            </tr>
+            <tr>
+              <th>開催地</th><td><%= event.address %></td>
+            </tr>
+            <tr>
+              <th>開催日時</th><td><%= event.day_time_at %></td>
+            </tr>
+            <tr>
+              <th>催行人数</th><td><%= event.participant_number %></td>
+            </tr>
+            <tr>
+              <th>開催概要</th><td><%= event.outline %></td>
+            </tr>
+            <tr>
+              <th>主催者</th><td><%= event.user.name%></td>
+            </tr>
+            <tr>
+              <th></th><td><%= link_to '詳細', event_path(event.id), class: 'btn btn-light btn-sm' %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

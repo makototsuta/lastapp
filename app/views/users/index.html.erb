@@ -1,0 +1,104 @@
+<div class="container">
+  <div class="row">
+    <% @users.each do |user| %>
+      <% if user == current_user %>
+      <p>プロフィール</p>
+        <div class="user_index col-lg-12">
+          <div class="col-xs-12 col-md-4">
+            <%= image_tag(user.icon.url) if user.icon && user.icon.url %>
+          </div>
+          <div class="user_table">
+            <table>
+              <tr>
+                <th>名前</th><td><%= user.name %></td>
+              </tr>
+              <tr>
+                <th>年齢</th><td><%= user.birthed_at %></td>
+              </tr>
+              <tr>
+                <th>性別</th><td><%= user.sex %></td>
+              </tr>
+              <tr>
+                <th>メールアドレス</th><td><%= user.email %></td>
+              </tr>
+              <tr>
+                <th>住所</th><td><%= user.address %></td>
+              </tr>
+              <tr>
+                <th>携帯番号</th><td><%= user.mobile_number %></td>
+              </tr>
+              <tr>
+                <th>自己紹介</th><td><%= user.introduction %></td>
+              </tr>
+              <tr>
+                <th></th><td><%= link_to "編集", edit_user_registration_path(user.id), class: 'btn btn-light btn-sm' %></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+      <p>投稿イベント</p>
+        <div class="user_event col-sm-12">
+          <% user.events.each do |event| %>
+          <div class="user_index_event col-sm-12">
+            <div class="col-sm-12 col-md-4">
+              <%= image_tag(event.icon.url) if event.icon && event.icon.url %>
+            </div>
+            <div class="user_table">
+              <table>
+                <tr>
+                  <th>タイトル</th><td><%= event.title %></td>
+                </tr>
+                <tr>
+                  <th>開催地</th><td><%= event.address %></td>
+                </tr>
+                <tr>
+                  <th>開催日時</th><td><%= event.day_time_at %></td>
+                </tr>
+                <tr>
+                  <th>催行人数</th><td><%= event.participant_number %></td>
+                </tr>
+                <tr>
+                  <th>開催概要</th><td><%= event.outline %></td>
+                </tr>
+                <tr>
+                  <th>詳細</th><td><%= event.content %></td>
+                </tr>
+                <tr>
+                  <th></th><td><%= link_to "編集", edit_event_path(event.id) , class: 'btn btn-light btn-sm'%><%= link_to '削除', event_path(event.id), method: :delete, data: { confirm: '本当に削除していいですか？' } , class: 'btn btn-light btn-sm', style: "margin-left: 10px" %></td>
+                </tr>
+              </table>
+            </div>
+        </div>
+        <% end %>
+      </div>
+
+
+      <p>投稿動画</p>
+      <div class="user_movie col-xs-12 col-md-12 col-lg-12">
+        <% user.movies.each do |movie| %>
+        <div class="user_index_movie col-lg-12">
+          <div class="col-xs-12 col-md-4">
+            <%= video_tag movie.icon.url, controls: true, autobuffer: true %>
+          </div>
+          <div class="user_table">
+            <table>
+              <tr>
+                <th>タイトル</th><td><%= movie.title %></td>
+              </tr>
+              <tr>
+                <th>内容</th><td><%= movie.content %></td>
+              </tr>
+              <tr>
+                <th></th><td><%= link_to "編集", edit_movie_path(movie.id), class: 'btn btn-light btn-sm' %><%= link_to '削除', movie_path(movie.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, class: 'btn btn-light btn-sm', style: "margin-left: 10px" %></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      <% end %>
+      </div>
+
+      <% end %>
+    <% end %>
+  </div>
+</div>

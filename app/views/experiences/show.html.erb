@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="experience_show col-sm-12">
+      <div class="experience_show_icon col-sm-12 col-md-4">
+        <%= image_tag(@experience.icon.url) if @experience.icon && @experience.icon.url %>
+      </div>
+        <div class="experience_show_table col-sm-12 col-md-8">
+          <table>
+            <tr>
+              <th>タイトル</th><td><%= @experience.title %></td>
+            </tr>
+            <tr>
+              <th>内容</th><td><%= @experience.content %></td>
+            </tr>
+            <tr>
+              <th>実施手順</th><td>
+                <%=safe_join(@experience.procedure.split("\n"),tag(:br))%></td>
+            </tr>
+            <tr>
+                <div class="like"><th><p>心霊現象起きた?</p></th><td><%= button_to '起きた!!', experience_watches_path(@experience) %></td></div>
+            </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <p><コメント一覧></p>
+      <hr>
+      <div id="opinions_area">
+        <%= render partial: 'opinions/index', locals: { opinions: @opinions, experience: @experience } %>
+      </div>
+      <%= render partial: 'opinions/form', locals: { opinion: @opinion, experience: @experience } %>
+    </div>
+  </div>
+</div>

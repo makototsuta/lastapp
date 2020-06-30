@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <div class="event_show col-sm-12">
+      <div class="event_show_icon col-sm-12 col-md-6 col-lg-4">
+        <%= image_tag(@event.icon.url) if @event.icon && @event.icon.url %>
+      </div>
+        <div class="event_show_table col-sm-12 col-md-6 col-lg-8">
+          <table>
+            <tr>
+              <th>タイトル</th><td><%= @event.title %></td>
+            </tr>
+            <tr>
+              <th>開催地</th><td><%= @event.address %></td>
+            </tr>
+            <tr>
+              <th>開催日時</th><td><%= @event.day_time_at %></td>
+            </tr>
+            <tr>
+              <th>催行人数</th><td><%= @event.participant_number %></td>
+            </tr>
+            <tr>
+              <th>開催概要</th><td><%= @event.outline %></td>
+            </tr>
+            <tr>
+              <th>開催内容</th><td><%= @event.content %></td>
+            </tr>
+        </table>
+      </div>
+    </div>
+    <div class="event_user col-sm-12">
+      <div class="event_show_usericon col-sm-12 col-md-6 col-lg-4">
+        <%= image_tag(@event.user.icon.url) if @event.user.icon && @event.user.icon.url %>
+      </div>
+        <div class="event_show_usertable col-sm-12 col-md-6 col-lg-8">
+          <table>
+            <tr>
+              <th>主催者名</th><td><%= @event.user.name %></td>
+            </tr>
+            <tr>
+              <th>性別</th><td><%= @event.user.sex %></td>
+            </tr>
+            <tr>
+              <th>メール</th><td><%= @event.user.email %></td>
+            </tr>
+            <tr>
+              <th>携帯番号</th><td><%= @event.user.mobile_number %></td>
+            </tr>
+            <tr>
+              <th>自己紹介</th><td><%= @event.user.introduction %></td>
+            </tr>
+        </table>
+      </div>
+      <% if @event.day_time_at >= Date.today %>
+        <% if user_signed_in? %>
+          <% unless @event.user_id == current_user.id %>
+            <% if @favorite_event.present? %>
+              <%= link_to '参加キャンセル', favorite_event_path(id: @favorite_event.id), method: :delete, class: 'btn btn-danger' %>
+            <% else %>
+              <%= link_to '参加する', favorite_events_path(event_id: @event.id), method: :post, class: 'btn btn-primary' %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= link_to '参加する', new_user_session_path, class: 'btn btn-primary' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

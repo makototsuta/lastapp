@@ -1,0 +1,28 @@
+<%= form_with(model: @movie, local: true) do |form| %>
+  <% if @movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @movie.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @movie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+  <div class="field">
+    <%= form.label :content %><br>
+    <%= form.text_field :content %>
+  </div>
+  <div class="field">
+    <%= form.label :icon %><br>
+    <%= form.file_field :icon, :accept => 'video/*' %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to '動画一覧画面に戻る',movies_path %>

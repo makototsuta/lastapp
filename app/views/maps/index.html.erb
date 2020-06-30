@@ -1,0 +1,212 @@
+<div class="container">
+  <h4>周辺心霊マップ</h4>
+  <div id="gmap" style="height:400px"></div> <!-- 地図を表示する領域 -->
+</div>
+
+
+<script>
+var map;
+var marker = [];
+var infoWindow = [];
+var markerData = [ // マーカーを立てる場所名・緯度・経度
+  {
+    name: '<a href="/maps/6" target="_blank">緑ヶ丘霊園</a>',
+    lat: 35.603717,
+    lng: 139.593120,
+ }, {
+    name: '<a href="/maps/2" target="_blank">打越橋</a>',
+    lat: 35.433339,
+    lng: 139.638774,
+ }, {
+    name: '<a href="/maps/1" target="_blank">洋光台マンション(廃墟)</a>',
+    lat: 35.376156,
+    lng: 139.589721,
+ }, {
+    name: '<a href="/maps/3" target="_blank">山神トンネル</a>',
+    lat: 35.454837,
+    lng: 139.266676,
+ }, {
+    name: '<a href="/maps/4" target="_blank">ビジネスホテルトロピカル(廃墟)</a>',
+    lat: 35.517775,
+    lng: 139.593444,
+ }, {
+    name: '<a href="/maps/5" target="_blank">ホテルすかいらぶ(廃墟)</a>',
+    lat: 35.383364,
+    lng: 139.254930,
+ }, {
+    name: '<a href="/maps/8" target="_blank">たっちゃん池（宅部池）</a>',
+    lat: 35.762092,
+    lng: 139.441812,
+ }, {
+    name: '<a href="/maps/7" target="_blank">八王子トンネル</a>',
+    lat: 35.612229,
+    lng: 139.265610,
+ }, {
+    name: '<a href="/maps/10" target="_blank">NTT上野ビル</a>',
+    lat: 35.707571,
+    lng: 139.775878,
+ }, {
+    name: '<a href="/maps/9" target="_blank">白金トンネル</a>',
+    lat: 35.676124,
+    lng: 139.711532,
+ }, {
+    name: '<a href="/maps/11" target="_blank">番町皿屋敷（お菊の皿）</a>',
+    lat: 35.690003,
+    lng: 139.734104
+ }
+];
+
+function initMap() {
+  var target = document.getElementById('gmap');
+  //マップを生成して表示
+  var map = new google.maps.Map(document.getElementById('gmap'), {
+    center: {lat: 35.681167, lng: 139.767052},
+    zoom: 15
+  });
+
+  //情報ウィンドウのインスタンスの生成
+  var infoWindow = new google.maps.InfoWindow;
+
+  //ブラウザが Geolocation に対応しているかを判定
+  //対応していない場合の処理
+  if(!navigator.geolocation){
+    //情報ウィンドウの位置をマップの中心位置に指定
+    infoWindow.setPosition(map.getCenter());
+    //情報ウィンドウのコンテンツを設定
+    infoWindow.setContent('Geolocation に対応していません。');
+    //情報ウィンドウを表示
+    infoWindow.open(map);
+  }
+
+  //ブラウザが対応している場合、position にユーザーの位置情報が入る
+  navigator.geolocation.getCurrentPosition(function(position) {
+    //position から緯度経度（ユーザーの位置）のオブジェクトを作成し変数に代入
+    var pos = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    };
+    //情報ウィンドウに現在位置を指定
+    infoWindow.setPosition(pos);
+    //情報ウィンドウのコンテンツを設定
+    infoWindow.setContent('現在位置を取得しました。');
+    //情報ウィンドウを表示
+    infoWindow.open(map);
+    //マップの中心位置を指定
+    map.setCenter(pos);
+
+    var myCircle = new google.maps.Circle({
+    strokeColor: '#0088ff',
+    strokeOpacity: '0.8',
+    strokeWeight: '2',
+    fillColor: '#0088ff',
+    fillOpacity: '0.35',
+    map: map,
+    center: pos,
+    radius: 500
+  });
+
+}, function() {  //位置情報の取得をユーザーがブロックした場合のコールバック
+    //情報ウィンドウの位置をマップの中心位置に指定
+    infoWindow.setPosition(map.getCenter());
+    //情報ウィンドウのコンテンツを設定
+    infoWindow.setContent('Error: Geolocation が無効です。');
+    //情報ウィンドウを表示
+    infoWindow.open(map);
+  });
+
+    //マーカー毎の処理
+  for (var i = 0; i < markerData.length; i++) {
+         markerLatLng = new google.maps.LatLng({lat: markerData[i]['lat'], lng: markerData[i]['lng']}); //緯度経度のデータ作成
+         marker[i] = new google.maps.Marker({ //マーカーの追加
+          position: markerLatLng, //マーカーを立てる位置を指定
+             map: map //マーカーを立てる地図を指定
+        });
+
+      infoWindow[i] = new google.maps.InfoWindow({ //吹き出しの追加
+          content: '<div class="sample">' + markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
+        });
+
+      markerEvent(i); //マーカーにクリックイベントを追加
+  }
+
+    //マーカーにクリックイベントを追加
+  function markerEvent(i) {
+      marker[i].addListener('click', function() { //マーカーをクリックしたとき
+        infoWindow[i].open(map, marker[i]); //吹き出しの表示
+    });
+  }
+}
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnqmYC6AIMWBOAv8WcT51MO9pHnfTcj4M&callback=initMap" async defer></script><!-- YOUR_API_KEYの部分は取得した APIキーで置き換えます -->
+
+<div class="container">
+  <%= search_form_for @q do |form| %>
+    <div class="form-group row">
+      <table>
+        <tr>
+          <th><%= form.label :address_cont, "住所検索" %></th><td><%= form.search_field :address_cont %></td>
+        </tr>
+        <tr>
+          <th><%= form.label :name_cont, "場所検索" %></th><td><span><%= form.radio_button :name_cont, '', {:checked => true} %>指定なし</span><span><%= form.radio_button :name_cont, 'トンネル' %>トンネル</span>
+        <span><%= form.radio_button :name_cont, '廃墟' %>廃墟</span>
+          <span><%= form.radio_button :name_cont, '病院' %>病院</span></td>
+        </tr>
+        <tr>
+          <th><%= form.submit "検索" %></th><td></td>
+        </tr>
+      </table>
+    </div>
+  <% end %>
+  <p>
+    <a class="btn btn-light row" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      心霊スポット一覧
+    </a>
+  </p>
+  <div class="collapse row" id="collapseExample">
+    <div class="card card-body">
+      <table>
+        <tr>
+          <th>地名</th>
+          <th>住所</th>
+          <th>恐怖度</th>
+        </tr>
+      <% @maps.each do |map| %>
+        <tr>
+          <td><%= link_to map.name, map_path(map.id) %></td>
+          <td><%= map.address %></td>
+          <td class="horror_level"><%= map.horror_level %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="map_event_index  col-sm-12">
+      <h4>新着イベント</h4>
+      <% @events.each do |event| %>
+      <div class="map_each_event col-sm-12 col-md-6 col-lg-4">
+        <%= link_to image_tag(event.icon.url), event_path(event.id) %>
+        <p><%= event.title %></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="map_movie_index col-sm-12">
+      <h4>新着動画</h4>
+      <% @movies.each do |movie| %>
+      <div class="map_each_movie col-sm-12 col-md-6 col-lg-4">
+        <%= link_to video_tag(movie.icon.url), movie_path(movie.id) %>
+        <p><%= movie.title %></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

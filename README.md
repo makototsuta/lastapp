@@ -63,3 +63,7 @@ https://docs.google.com/spreadsheets/d/1pdfA8UnEjmWmmubFymKbuBLjJSRKi0K7W_4tUcVa
 * device
 * carrierwave
 * mini_magick
+
+## アプリ確認用アカウント
+mail: suzuki@yahoo.co.jp
+password: 333333

@@ -1,0 +1,46 @@
+<%= form_with(model: @event, local: true) do |form| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @event.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+  <div class="field">
+    <%= form.label :day_time_at %><br>
+    <%= form.date_select :day_time_at,{use_month_numbers: true, start_date:Date.today, default: Date.today} %>
+  </div>
+  <div class="field">
+    <%= form.label :participant_number %><br>
+    <%= form.text_field :participant_number %>
+  </div>
+  <div class="field">
+    <%= form.label :address %><br>
+    <%= form.text_field :address %>
+  </div>
+  <div class="field">
+    <%= form.label :outline %><br>
+    <%= form.text_field :outline %>
+  </div>
+  <div class="field">
+    <%= form.label :content %><br>
+    <%= form.text_area :content %>
+  </div>
+  <div class="field">
+    <%= form.label :icon %><br>
+    <%= image_tag(@event.icon.url) if @event.icon && @event.icon.url %><br>
+    <%= form.file_field :icon %>
+    <%= form.hidden_field :icon_cache %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to 'イベント一覧画面に戻る',events_path %>

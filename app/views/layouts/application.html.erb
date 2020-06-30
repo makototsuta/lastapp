@@ -7,9 +7,54 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
   </head>
 
   <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand">
+        みんなでオカルト
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <%= link_to "トップ", maps_path, class:"nav-link", style: "color: #c1c2c7" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "イベント", events_path, {class:"nav-link"} %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "恐怖動画", movies_path, {class:"nav-link"} %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "心霊体験", experiences_path, {class:"nav-link"} %>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <% if user_signed_in? %>
+              <%= link_to "マイページ", users_path, {class: "nav-link"} %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <% else %>
+              <%= link_to "新規登録", new_user_registration_path, {class: "nav-link"} %>
+              <%= link_to "ログイン", new_user_session_path %>
+            <% end %>
+          </form>
+        </div>
+      </nav>
+    </header>
+    <% if notice %>
+      <p class="alert alert-notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-error"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

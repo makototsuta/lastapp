@@ -1,0 +1,24 @@
+
+<div class="container">
+  <div class="row">
+    <div class="map_icon_show col-sm-12 col-md-6 col-lg-4">
+      <%= image_tag(@map.icon.url) if @map.icon && @map.icon.url %>
+    </div>
+    <div class="map_table_show col-sm-12 col-md-6 col-lg-8">
+      <table>
+        <tr>
+          <th>地名</th><td><%= @map.name %></td>
+        </tr>
+        <tr>
+          <th>住所</th><td><%= @map.address %></td>
+        </tr>
+        <tr>
+          <th>恐怖度</th><td><%= @map.horror_level %></td>
+        </tr>
+        <tr>
+          <th>概要</th><td><%= @map.content %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

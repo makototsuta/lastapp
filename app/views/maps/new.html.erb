@@ -1,0 +1,27 @@
+<%= form_with(model: @map, local: true) do |form| %>
+  <div class="map_name">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="map_address">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+  <div class="map_horror_level">
+    <%= form.label :horror_level %>
+    <%= form.text_field :horror_level %>
+  </div>
+  <div class="map_content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <div class="map_icon_new">
+    <%= form.label :icon %>
+    <%= image_tag(@map.icon.url) if @map.icon && @map.icon.url %>
+    <%= form.file_field :icon %>
+    <%= form.hidden_field :icon_cache %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to '心霊スポット一覧画面に戻る',maps_path %>

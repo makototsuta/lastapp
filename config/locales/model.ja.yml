@@ -1,0 +1,48 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      event: イベント
+      movie: 心霊動画
+      comment: コメント
+      map: 心霊スポット
+      experience: 心霊体験
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        icon: プロフィール画像
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        birthed_at: 誕生日
+        sex: 性別
+        address: 住所
+        mobile_number: 携帯番号
+        introduction: 自己紹介
+      event:
+        title: タイトル
+        content: 内容
+        outline: 概要
+        address: 開催地
+        icon: イベントイメージ
+        organizer_id: 主催者
+        day_time_at: 開催日
+        participant_number: 催行人数
+      movie:
+        title: タイトル
+        content: 内容
+        icon: 動画イメージ
+      map:
+        name: 地名
+        address: 住所
+        content: 内容
+        horror_level: 恐怖度
+        icon: 心霊スポットイメージ
+      experience:
+        title: タイトル
+        content: 詳細
+        procedure: 実施手順
+        danger_level: 危険度
+        icon: 体験イメージ
+        outline: 概要
+        number_of_incident: 心霊体験人数

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="movie-show col-sm-12 col-md-8">
+      <%= video_tag @movie.icon.url, controls: true, autobuffer: true %>
+      <h4><%= @movie.title %></h4>
+      <div><%= @movie.user.name %></div>
+      <div><%= @movie.content %></div>
+      <div class="movie-show-button">
+        <% if user_signed_in? %>
+          <% unless @movie.user_id == current_user.id %>
+            <% if @favorite_movie.present? %>
+              <%= link_to 'お気に入り解除する', favorite_movie_path(id: @favorite_movie.id), method: :delete, class: 'btn btn-light btn-sm' %>
+            <% else %>
+              <%= link_to 'お気に入りする', favorite_movies_path(movie_id: @movie.id), method: :post, class: 'btn btn-light btn-sm' %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= link_to 'お気に入りする', new_user_session_path, class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4">
+      <hr>
+      <p><コメント一覧></p>
+      <div id="comments_area">
+        <%= render partial: 'comments/index', locals: { comments: @comments, movie: @movie } %>
+      </div>
+      <%= render partial: 'comments/form', locals: { comment: @comment, movie: @movie } %>
+    </div>
+  </div>
+</div>

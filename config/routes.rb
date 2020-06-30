@@ -1,3 +1,28 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root 'maps#index'
+
+  resources :maps
+
+  resources :experiences do
+    resources :opinions
+    resources :watches, only: [:create]
+  end
+
+  resources :movies do
+    resources :comments
+  end
+
+  resources :events
+
+  devise_for :users
+  resources :users
+
+  resources :favorite_events, only: [:create, :destroy]
+
+  resources :favorite_movies, only: [:create, :destroy]
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 end

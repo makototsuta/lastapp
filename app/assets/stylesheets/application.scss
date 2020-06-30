@@ -1,0 +1,367 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap";
+
+ .field {
+   margin-bottom: 20px;
+ }
+
+ .field img{
+   width: 400px;
+   height: 300px;
+ }
+
+ .navbar {
+   background-color: #3a3f4f;
+ }
+
+ body {
+  background-color: #3a3f4f;
+  color: #c1c2c7;
+  margin: 0 33px 0 33px;
+  font-family: tahoma, verdana, arial, helvetica, sans-serif;
+}
+
+hr {
+  background-color: #c1c2c7;
+}
+
+p, ol, ul, td, a {
+  font-family: tahoma, verdana, arial, helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 18px;
+  color: #c1c2c7;
+}
+
+img {
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+}
+
+video  {
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+}
+
+.navbar {
+  border-bottom: solid 1px #d4d8db;
+  margin-bottom: 30px;
+}
+
+ .gm-style-iw-d {
+   color: #c1c2c7;
+ }
+
+#gmap {
+  margin-bottom: 30px;
+}
+
+.horror_level {
+  color: #c1c2c7;
+}
+
+.form-group table {
+
+}
+
+.form-group table th {
+  width: 100px;
+}
+
+
+ .event_search {
+   width: 100%;
+ }
+
+ .new_event {
+   width: 100%;
+   text-align: right;
+ }
+
+ .event_index {
+   border-top: solid 1px #d4d8db;
+   padding: 30px 0px 30px 0px;
+ }
+
+ .event_index_icon {
+   float: left;
+ }
+
+ .event_index_table {
+   float: left;
+ }
+
+ .event_index table th {
+   width: 100px;
+ }
+
+ .event_show_icon {
+   float: left;
+   margin: 20px 0 20px 0;
+ }
+
+ .event_show_table {
+   float: left;
+   margin: 20px 0 20px 0;
+ }
+
+ .event_show_table th {
+   width: 100px;
+ }
+
+ .event_show_usericon {
+   float: left;
+   margin: 20px 0 20px 0;
+ }
+
+ .event_show_usertable {
+   float: left;
+   margin: 20px 0 20px 0;
+ }
+
+ .event_show_usertable th {
+   width: 100px;
+ }
+
+ .new_movie {
+   width: 100%;
+   text-align: right;
+ }
+
+.movie_index video {
+  max-width: 100%;
+  height: 300px;
+  margin-right: 20px;
+}
+
+.each_movie {
+  float: left;
+}
+
+.movie-show video {
+  max-width: 100%;
+  height: 400px;
+}
+
+.movie-show-button {
+  width: 100%;
+  text-align: right;
+}
+
+.user_index {
+  border: solid 1px #d4d8db;
+  padding: 10px;
+}
+
+.user_index img {
+  float: left;
+  margin-right: 20px;
+}
+
+.user_index table th {
+  width:150px;
+}
+
+.user_event {
+  border: solid 1px #d4d8db;
+  height: 100%;
+}
+
+.user_index_event {
+  padding: 30px 0 30px 0;
+  margin-bottom: 50px;
+}
+
+.user_index_event img {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+.user_index_event table th {
+  width: 100px;
+}
+
+.user_movie {
+  border: solid 1px #d4d8db;
+  height: 100%;
+}
+
+.user_index_movie {
+  padding: 30px 0 30px 0;
+  margin-bottom: 50px;
+}
+
+.user_index_movie video {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+.user_index_movie table {
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.user_index_movie table th {
+  width: 100px;
+}
+
+.experience th {
+  width: 300px;
+}
+
+.experience td {
+  width: 500px;
+}
+
+.experience_index {
+  border-top: solid 1px #d4d8db;
+  padding: 15px 0px 15px 0px;
+}
+
+.experience_show_icon {
+  float: left;
+  margin: 20px 0 20px 0;
+}
+
+.experience_show_table {
+  float: left;
+  margin-top: -20px;
+}
+
+.experience_show table th {
+  width: 150px;
+  height: 100px;
+}
+
+.experience_show table td {
+  height: 100px;
+}
+
+.map_event_index {
+  margin-top: 50px;
+}
+
+.map_each_evnet img {
+  margin-right: 20px;
+}
+
+.map_each_event {
+  float: left;
+  color: gray;
+  margin-bottom: 50px;
+}
+
+.map_movie_index {
+  margin-top: 50px;
+}
+
+.map_each_movie video {
+  margin-right: 20px;
+}
+
+.map_each_movie {
+  float: left;
+  color: gray;
+  margin-bottom: 50px;
+}
+
+.map_icon_show {
+  float: left;
+  margin-bottom: 50px;
+}
+
+.map_table_show {
+  float: left;
+}
+
+.map_table_show th {
+  width: 100px;
+}
+
+.card {
+  background-color: #3a3f4f;
+}
+
+.card-header {
+  height: 30px;
+}
+
+ul {
+  list-style: none;
+}
+
+li span {
+  margin-right: 50px;
+  margin-left: -40px;
+}
+
+.fields textarea {
+  width: 100%;
+}
+
+.low {
+  margin-bottom: 50px;
+}
+
+.middle {
+  margin-bottom: 50px;
+}
+
+.experience{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+table.experience tr{
+  border-bottom: solid 1px #eee;
+  cursor: pointer;
+}
+
+table.experience tr:hover{
+  background-color: #d4f0fd;
+}
+
+.experience td,.experience th{
+  text-align: center;
+  width: 25%;
+  padding: 15px 0;
+}
+
+.experience td.icon {
+  background-size: 80px;
+  background-position: left 5px center;
+  background-repeat: no-repeat;
+  padding-left: 90px;
+}
+
+.experience td.icon.icon1 {
+  background-image: url(スリーキングス.jpeg)
+}
+
+.experience td.icon.icon2 {
+  background-image: url(ホテルすかいらぶ.jpeg)
+}
+
+.experience td.icon.icon3 {
+  background-image: url(ひとりかくれんぼ.jpeg)
+}
