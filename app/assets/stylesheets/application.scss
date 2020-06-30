@@ -318,12 +318,50 @@ li span {
   width: 100%;
 }
 
-table.experience{
-  border-collapse:collapse;
-  margin:0 auto;
+.low {
+  margin-bottom: 50px;
+}
+
+.middle {
+  margin-bottom: 50px;
+}
+
+.experience{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+table.experience tr{
+  border-bottom: solid 1px #eee;
+  cursor: pointer;
+}
+
+table.experience tr:hover{
+  background-color: #d4f0fd;
 }
 
 .experience td,.experience th{
-  border:1px solid #ccc;
-  padding:10px;
+  text-align: center;
+  width: 25%;
+  padding: 15px 0;
+}
+
+.experience td.icon {
+  background-size: 80px;
+  background-position: left 5px center;
+  background-repeat: no-repeat;
+  padding-left: 90px;
+}
+
+.experience td.icon.icon1 {
+  background-image: url(スリーキングス.jpeg)
+}
+
+.experience td.icon.icon2 {
+  background-image: url(ホテルすかいらぶ.jpeg)
+}
+
+.experience td.icon.icon3 {
+  background-image: url(ひとりかくれんぼ.jpeg)
 }

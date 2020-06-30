@@ -8,12 +8,12 @@
             <th>タイトル</th>
             <th>概要</th>
             <th>心霊現象発生回数</th>
-            <td></td>
+            <th></th>
           </tr>
         <% @experiences.each do |experience| %>
           <% if experience.danger_level == "1" %>
             <tr>
-              <td class='icon1'><%= experience.title %></td>
+              <td class='icon icon1'><%= experience.title %></td>
               <td><%= experience.outline %></td>
               <td><%= experience.watches.count %></td>
               <td><%= link_to '詳細', experience_path(experience.id), class: 'btn btn-light btn-sm' %></td>
@@ -29,12 +29,12 @@
             <th>タイトル</th>
             <th>概要</th>
             <th>心霊現象発生回数</th>
-            <td></td>
+            <th></th>
           </tr>
         <% @experiences.each do |experience| %>
           <% if experience.danger_level == "2" %>
             <tr>
-              <td class='icon2'><%= experience.title %></td>
+              <td class='icon icon2'><%= experience.title %></td>
               <td><%= experience.outline %></td>
               <td><%= experience.watches.count %></td>
               <td><%= link_to '詳細', experience_path(experience.id), class: 'btn btn-light btn-sm' %></td>
@@ -50,12 +50,12 @@
             <th>タイトル</th>
             <th>概要</th>
             <th>心霊現象発生回数</th>
-            <td></td>
+            <th></th>
           </tr>
         <% @experiences.each do |experience| %>
           <% if experience.danger_level == "3" %>
             <tr>
-              <td class='icon3'><%= experience.title %></td>
+              <td class='icon icon3'><%= experience.title %></td>
               <td><%= experience.outline %></td>
               <td><%= experience.watches.count %></td>
               <td><%= link_to '詳細', experience_path(experience.id), class: 'btn btn-light btn-sm' %></td>
